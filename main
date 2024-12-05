@@ -1,0 +1,2912 @@
+Lanos.pyc (Python 3.13)
+[Code]
+    File Name: Lanos.pyw
+    Object Name: <module>
+    Qualified Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Stack Size: 11
+    Flags: 0x00000000
+    [Names]
+        'tkinter'
+        'tk'
+        'subprocess'
+        'os'
+        'time'
+        'sys'
+        'atexit'
+        'messagebox'
+        'StringVar'
+        'ttk'
+        'path'
+        'join'
+        'dirname'
+        'abspath'
+        '__file__'
+        'lock_file'
+        'show_error_message'
+        'exists'
+        'exit'
+        'open'
+        'f'
+        'write'
+        'str'
+        'getpid'
+        'remove_lock_file'
+        'register'
+        'get_script_path'
+        'processes'
+        'execute_and_reopen'
+        'reopen_menu'
+        'handle_selection'
+        'create_lua_script'
+        'reset_lua_scripts'
+        'open_animation_spoofing'
+        'open_script_spoofing'
+        'exit_application'
+        'center_window'
+        'replace_cookie'
+        'prompt_for_cookie'
+        'replace_cookie_action'
+        'Tk'
+        'root'
+        'title'
+        'geometry'
+        'configure'
+        'wm_attributes'
+        'resizable'
+        'Button'
+        'pack'
+        'mainloop'
+    [Locals+Names]
+    [Constants]
+        0
+        None
+        (
+            'messagebox'
+            'StringVar'
+            'ttk'
+        )
+        'lanos.lock'
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: show_error_message
+            Qualified Name: show_error_message
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'tk'
+                'Tk'
+                'withdraw'
+                'messagebox'
+                'showerror'
+                'destroy'
+            [Locals+Names]
+                'temp_root'
+            [Constants]
+                None
+                'Error'
+                'Another Instance Of Lanos Is Already Running.'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: tk
+                12      LOAD_ATTR                       2: Tk
+                32      PUSH_NULL
+                34      CALL                            0
+                42      STORE_FAST                      0: temp_root
+                44      LOAD_FAST                       0: temp_root
+                46      LOAD_ATTR                       5: withdraw
+                66      CALL                            0
+                74      POP_TOP
+                76      LOAD_GLOBAL                     6: messagebox
+                86      LOAD_ATTR                       8: showerror
+                106     PUSH_NULL
+                108     LOAD_CONST                      1: 'Error'
+                110     LOAD_CONST                      2: 'Another Instance Of Lanos Is Already Running.'
+                112     CALL                            2
+                120     POP_TOP
+                122     LOAD_FAST                       0: temp_root
+                124     LOAD_ATTR                       11: destroy
+                144     CALL                            0
+                152     POP_TOP
+                154     RETURN_CONST                    0: None
+        'w'
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: remove_lock_file
+            Qualified Name: remove_lock_file
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'os'
+                'path'
+                'exists'
+                'lock_file'
+                'remove'
+            [Locals+Names]
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: os
+                12      LOAD_ATTR                       2: path
+                32      LOAD_ATTR                       5: exists
+                52      LOAD_GLOBAL                     6: lock_file
+                62      CALL                            1
+                70      TO_BOOL
+                78      POP_JUMP_IF_FALSE               27 (to 134)
+                82      LOAD_GLOBAL                     0: os
+                92      LOAD_ATTR                       8: remove
+                112     PUSH_NULL
+                114     LOAD_GLOBAL                     6: lock_file
+                124     CALL                            1
+                132     POP_TOP
+                134     RETURN_CONST                    0: None
+                136     RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: get_script_path
+            Qualified Name: get_script_path
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'os'
+                'path'
+                'join'
+                'dirname'
+                'abspath'
+                '__file__'
+            [Locals+Names]
+                'script_name'
+            [Constants]
+                None
+                'Modules'
+                'Functions'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: os
+                12      LOAD_ATTR                       2: path
+                32      LOAD_ATTR                       5: join
+                52      LOAD_GLOBAL                     0: os
+                62      LOAD_ATTR                       2: path
+                82      LOAD_ATTR                       7: dirname
+                102     LOAD_GLOBAL                     0: os
+                112     LOAD_ATTR                       2: path
+                132     LOAD_ATTR                       9: abspath
+                152     LOAD_GLOBAL                     10: __file__
+                162     CALL                            1
+                170     CALL                            1
+                178     LOAD_CONST                      1: 'Modules'
+                180     LOAD_CONST                      2: 'Functions'
+                182     LOAD_FAST                       0: script_name
+                184     CALL                            4
+                192     RETURN_VALUE
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: execute_and_reopen
+            Qualified Name: execute_and_reopen
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'root'
+                'withdraw'
+                'get_script_path'
+                'subprocess'
+                'Popen'
+                'processes'
+                'append'
+                'wait'
+                'time'
+                'sleep'
+                'reopen_menu'
+                'reset_lua_scripts'
+            [Locals+Names]
+                'script_name'
+                'script_path'
+                'process'
+            [Constants]
+                None
+                'python'
+                1
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: root
+                12      LOAD_ATTR                       3: withdraw
+                32      CALL                            0
+                40      POP_TOP
+                42      LOAD_GLOBAL                     5: NULL + get_script_path
+                52      LOAD_FAST                       0: script_name
+                54      CALL                            1
+                62      STORE_FAST                      1: script_path
+                64      LOAD_GLOBAL                     6: subprocess
+                74      LOAD_ATTR                       8: Popen
+                94      PUSH_NULL
+                96      LOAD_CONST                      1: 'python'
+                98      LOAD_FAST                       1: script_path
+                100     BUILD_LIST                      2
+                102     CALL                            1
+                110     STORE_FAST                      2: process
+                112     LOAD_GLOBAL                     10: processes
+                122     LOAD_ATTR                       13: append
+                142     LOAD_FAST                       2: process
+                144     CALL                            1
+                152     POP_TOP
+                154     LOAD_FAST                       2: process
+                156     LOAD_ATTR                       15: wait
+                176     CALL                            0
+                184     POP_TOP
+                186     LOAD_GLOBAL                     16: time
+                196     LOAD_ATTR                       18: sleep
+                216     PUSH_NULL
+                218     LOAD_CONST                      2: 1
+                220     CALL                            1
+                228     POP_TOP
+                230     LOAD_GLOBAL                     21: NULL + reopen_menu
+                240     CALL                            0
+                248     POP_TOP
+                250     LOAD_GLOBAL                     23: NULL + reset_lua_scripts
+                260     CALL                            0
+                268     POP_TOP
+                270     RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: reopen_menu
+            Qualified Name: reopen_menu
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'root'
+                'deiconify'
+                'center_window'
+            [Locals+Names]
+            [Constants]
+                None
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: root
+                12      LOAD_ATTR                       3: deiconify
+                32      CALL                            0
+                40      POP_TOP
+                42      LOAD_GLOBAL                     5: NULL + center_window
+                52      LOAD_GLOBAL                     0: root
+                62      CALL                            1
+                70      POP_TOP
+                72      RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: handle_selection
+            Qualified Name: handle_selection
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 11
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'tk'
+                'Toplevel'
+                'root'
+                'title'
+                'geometry'
+                'configure'
+                'wm_attributes'
+                'resizable'
+                'center_window'
+                'StringVar'
+                'Label'
+                'pack'
+                'ttk'
+                'Combobox'
+                'Radiobutton'
+                'get'
+                'Entry'
+                'Button'
+            [Locals+Names]
+                'script_type'
+                'modes'
+                'mode_dropdown'
+                'user_radio'
+                'group_radio'
+                'confirm_selection'
+                'confirm_button'
+                'id_entry'
+                'indicator_label'
+                'mode_var'
+                'publish_var'
+                'selection_window'
+                'update_indicator'
+            [Constants]
+                None
+                ' Selection'
+                '300x300'
+                '#1c1c1c'
+                (
+                    'bg'
+                )
+                '-alpha'
+                0.9
+                False
+                'Normal'
+                (
+                    'value'
+                )
+                (
+                    'Help'
+                    'Normal'
+                    'Explorer Selection'
+                    'Table Spoof'
+                    'Table Spoof and Return 1'
+                    'Table Spoof and Return 2'
+                )
+                'Select Mode:'
+                'white'
+                (
+                    'Anonymous Pro'
+                    12
+                )
+                (
+                    'text'
+                    'bg'
+                    'fg'
+                    'font'
+                )
+                5
+                (
+                    'pady'
+                )
+                (
+                    'textvariable'
+                    'values'
+                )
+                'User'
+                'Select Publishing Type:'
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: <lambda>
+                    Qualified Name: handle_selection.<locals>.<lambda>
+                    Arg Count: 0
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                    [Locals+Names]
+                        'indicator_label'
+                        'update_indicator'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  2
+                        2       RESUME                          0
+                        4       LOAD_DEREF                      1: update_indicator
+                        6       PUSH_NULL
+                        8       LOAD_DEREF                      0: indicator_label
+                        10      CALL                            1
+                        18      RETURN_VALUE
+                (
+                    'text'
+                    'variable'
+                    'value'
+                    'bg'
+                    'fg'
+                    'command'
+                    'selectcolor'
+                )
+                'w'
+                (
+                    'anchor'
+                )
+                'Group'
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: <lambda>
+                    Qualified Name: handle_selection.<locals>.<lambda>
+                    Arg Count: 0
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 3
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                    [Locals+Names]
+                        'indicator_label'
+                        'update_indicator'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  2
+                        2       RESUME                          0
+                        4       LOAD_DEREF                      1: update_indicator
+                        6       PUSH_NULL
+                        8       LOAD_DEREF                      0: indicator_label
+                        10      CALL                            1
+                        18      RETURN_VALUE
+                'Selected: '
+                10
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: update_indicator
+                    Qualified Name: handle_selection.<locals>.update_indicator
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 5
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                        'config'
+                        'get'
+                    [Locals+Names]
+                        'label'
+                        'publish_var'
+                    [Constants]
+                        None
+                        'Selected: '
+                        (
+                            'text'
+                        )
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  1
+                        2       RESUME                          0
+                        4       LOAD_FAST                       0: label
+                        6       LOAD_ATTR                       1: config
+                        26      LOAD_CONST                      1: 'Selected: '
+                        28      LOAD_DEREF                      1: publish_var
+                        30      LOAD_ATTR                       3: get
+                        50      CALL                            0
+                        58      FORMAT_SIMPLE
+                        60      BUILD_STRING                    2
+                        62      LOAD_CONST                      2: ('text',)
+                        64      CALL_KW                         1
+                        66      POP_TOP
+                        68      RETURN_CONST                    0: None
+                'Enter ID:'
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: confirm_selection
+                    Qualified Name: handle_selection.<locals>.confirm_selection
+                    Arg Count: 0
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 8
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                        'get'
+                        'print'
+                        'create_lua_script'
+                        'destroy'
+                        'Exception'
+                        'messagebox'
+                        'showerror'
+                    [Locals+Names]
+                        'mode'
+                        'publishing_type'
+                        'id_value'
+                        'e'
+                        'id_entry'
+                        'mode_var'
+                        'publish_var'
+                        'script_type'
+                        'selection_window'
+                    [Constants]
+                        None
+                        'Mode: '
+                        ', Publishing Type: '
+                        ', ID: '
+                        'Error'
+                        'Failed to create Lua script: '
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  5
+                        2       RESUME                          0
+                        4       LOAD_DEREF                      5: mode_var
+                        6       LOAD_ATTR                       1: get
+                        26      CALL                            0
+                        34      STORE_FAST                      0: mode
+                        36      LOAD_DEREF                      6: publish_var
+                        38      LOAD_ATTR                       1: get
+                        58      CALL                            0
+                        66      STORE_FAST                      1: publishing_type
+                        68      LOAD_DEREF                      4: id_entry
+                        70      LOAD_ATTR                       1: get
+                        90      CALL                            0
+                        98      STORE_FAST                      2: id_value
+                        100     LOAD_GLOBAL                     3: NULL + print
+                        110     LOAD_CONST                      1: 'Mode: '
+                        112     LOAD_FAST                       0: mode
+                        114     FORMAT_SIMPLE
+                        116     LOAD_CONST                      2: ', Publishing Type: '
+                        118     LOAD_FAST                       1: publishing_type
+                        120     FORMAT_SIMPLE
+                        122     LOAD_CONST                      3: ', ID: '
+                        124     LOAD_FAST                       2: id_value
+                        126     FORMAT_SIMPLE
+                        128     BUILD_STRING                    6
+                        130     CALL                            1
+                        138     POP_TOP
+                        140     NOP
+                        142     LOAD_GLOBAL                     5: NULL + create_lua_script
+                        152     LOAD_FAST_LOAD_FAST             1: mode, publishing_type
+                        154     LOAD_FAST                       2: id_value
+                        156     LOAD_DEREF                      7: script_type
+                        158     CALL                            4
+                        166     POP_TOP
+                        168     LOAD_DEREF                      8: selection_window
+                        170     LOAD_ATTR                       7: destroy
+                        190     CALL                            0
+                        198     POP_TOP
+                        200     RETURN_CONST                    0: None
+                        202     PUSH_EXC_INFO
+                        204     LOAD_GLOBAL                     8: Exception
+                        214     CHECK_EXC_MATCH
+                        216     POP_JUMP_IF_FALSE               36 (to 290)
+                        220     STORE_FAST                      3: e
+                        222     LOAD_GLOBAL                     10: messagebox
+                        232     LOAD_ATTR                       12: showerror
+                        252     PUSH_NULL
+                        254     LOAD_CONST                      4: 'Error'
+                        256     LOAD_CONST                      5: 'Failed to create Lua script: '
+                        258     LOAD_FAST                       3: e
+                        260     FORMAT_SIMPLE
+                        262     BUILD_STRING                    2
+                        264     CALL                            2
+                        272     POP_TOP
+                        274     POP_EXCEPT
+                        276     LOAD_CONST                      0: None
+                        278     STORE_FAST                      3: e
+                        280     DELETE_FAST                     3: e
+                        282     RETURN_CONST                    0: None
+                        284     LOAD_CONST                      0: None
+                        286     STORE_FAST                      3: e
+                        288     DELETE_FAST                     3: e
+                        290     RERAISE                         1
+                        292     RERAISE                         0
+                        294     COPY                            3
+                        296     POP_EXCEPT
+                        298     RERAISE                         1
+                'Confirm'
+                '#333333'
+                '#4d4d4d'
+                (
+                    'text'
+                    'command'
+                    'bg'
+                    'fg'
+                    'activebackground'
+                    'activeforeground'
+                    'font'
+                )
+            [Disassembly]
+                0       MAKE_CELL                       0: script_type
+                2       MAKE_CELL                       7: id_entry
+                4       MAKE_CELL                       8: indicator_label
+                6       MAKE_CELL                       9: mode_var
+                8       MAKE_CELL                       10: publish_var
+                10      MAKE_CELL                       11: selection_window
+                12      MAKE_CELL                       12: update_indicator
+                14      RESUME                          0
+                16      LOAD_GLOBAL                     0: tk
+                26      LOAD_ATTR                       2: Toplevel
+                46      PUSH_NULL
+                48      LOAD_GLOBAL                     4: root
+                58      CALL                            1
+                66      STORE_DEREF                     11: selection_window
+                68      LOAD_DEREF                      11: selection_window
+                70      LOAD_ATTR                       7: title
+                90      LOAD_DEREF                      0: script_type
+                92      FORMAT_SIMPLE
+                94      LOAD_CONST                      1: ' Selection'
+                96      BUILD_STRING                    2
+                98      CALL                            1
+                106     POP_TOP
+                108     LOAD_DEREF                      11: selection_window
+                110     LOAD_ATTR                       9: geometry
+                130     LOAD_CONST                      2: '300x300'
+                132     CALL                            1
+                140     POP_TOP
+                142     LOAD_DEREF                      11: selection_window
+                144     LOAD_ATTR                       11: configure
+                164     LOAD_CONST                      3: '#1c1c1c'
+                166     LOAD_CONST                      4: ('bg',)
+                168     CALL_KW                         1
+                170     POP_TOP
+                172     LOAD_DEREF                      11: selection_window
+                174     LOAD_ATTR                       13: wm_attributes
+                194     LOAD_CONST                      5: '-alpha'
+                196     LOAD_CONST                      6: 0.9
+                198     CALL                            2
+                206     POP_TOP
+                208     LOAD_DEREF                      11: selection_window
+                210     LOAD_ATTR                       15: resizable
+                230     LOAD_CONST                      7: False
+                232     LOAD_CONST                      7: False
+                234     CALL                            2
+                242     POP_TOP
+                244     LOAD_GLOBAL                     17: NULL + center_window
+                254     LOAD_DEREF                      11: selection_window
+                256     CALL                            1
+                264     POP_TOP
+                266     LOAD_GLOBAL                     19: NULL + StringVar
+                276     LOAD_CONST                      8: 'Normal'
+                278     LOAD_CONST                      9: ('value',)
+                280     CALL_KW                         1
+                282     STORE_DEREF                     9: mode_var
+                284     BUILD_LIST                      0
+                286     LOAD_CONST                      10: ('Help', 'Normal', 'Explorer Selection', 'Table Spoof', 'Table Spoof and Return 1', 'Table Spoof and Return 2')
+                288     LIST_EXTEND                     1
+                290     STORE_FAST                      1: modes
+                292     LOAD_GLOBAL                     0: tk
+                302     LOAD_ATTR                       20: Label
+                322     PUSH_NULL
+                324     LOAD_DEREF                      11: selection_window
+                326     LOAD_CONST                      11: 'Select Mode:'
+                328     LOAD_CONST                      3: '#1c1c1c'
+                330     LOAD_CONST                      12: 'white'
+                332     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                334     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                336     CALL_KW                         5
+                338     LOAD_ATTR                       23: pack
+                358     LOAD_CONST                      15: 5
+                360     LOAD_CONST                      16: ('pady',)
+                362     CALL_KW                         1
+                364     POP_TOP
+                366     LOAD_GLOBAL                     24: ttk
+                376     LOAD_ATTR                       26: Combobox
+                396     PUSH_NULL
+                398     LOAD_DEREF                      11: selection_window
+                400     LOAD_DEREF                      9: mode_var
+                402     LOAD_FAST                       1: modes
+                404     LOAD_CONST                      17: ('textvariable', 'values')
+                406     CALL_KW                         3
+                408     STORE_FAST                      2: mode_dropdown
+                410     LOAD_FAST                       2: mode_dropdown
+                412     LOAD_ATTR                       23: pack
+                432     LOAD_CONST                      15: 5
+                434     LOAD_CONST                      16: ('pady',)
+                436     CALL_KW                         1
+                438     POP_TOP
+                440     LOAD_GLOBAL                     19: NULL + StringVar
+                450     LOAD_CONST                      18: 'User'
+                452     LOAD_CONST                      9: ('value',)
+                454     CALL_KW                         1
+                456     STORE_DEREF                     10: publish_var
+                458     LOAD_GLOBAL                     0: tk
+                468     LOAD_ATTR                       20: Label
+                488     PUSH_NULL
+                490     LOAD_DEREF                      11: selection_window
+                492     LOAD_CONST                      19: 'Select Publishing Type:'
+                494     LOAD_CONST                      3: '#1c1c1c'
+                496     LOAD_CONST                      12: 'white'
+                498     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                500     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                502     CALL_KW                         5
+                504     LOAD_ATTR                       23: pack
+                524     LOAD_CONST                      15: 5
+                526     LOAD_CONST                      16: ('pady',)
+                528     CALL_KW                         1
+                530     POP_TOP
+                532     LOAD_GLOBAL                     0: tk
+                542     LOAD_ATTR                       28: Radiobutton
+                562     PUSH_NULL
+                564     LOAD_DEREF                      11: selection_window
+                566     LOAD_CONST                      18: 'User'
+                568     LOAD_DEREF                      10: publish_var
+                570     LOAD_CONST                      18: 'User'
+                572     LOAD_CONST                      3: '#1c1c1c'
+                574     LOAD_CONST                      12: 'white'
+                576     LOAD_FAST                       8: indicator_label
+                578     LOAD_FAST                       12: update_indicator
+                580     BUILD_TUPLE                     2
+                582     LOAD_CONST                      20: <CODE> <lambda>
+                584     MAKE_FUNCTION
+                586     SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                588     LOAD_CONST                      3: '#1c1c1c'
+                590     LOAD_CONST                      21: ('text', 'variable', 'value', 'bg', 'fg', 'command', 'selectcolor')
+                592     CALL_KW                         8
+                594     STORE_FAST                      3: user_radio
+                596     LOAD_FAST                       3: user_radio
+                598     LOAD_ATTR                       23: pack
+                618     LOAD_CONST                      22: 'w'
+                620     LOAD_CONST                      23: ('anchor',)
+                622     CALL_KW                         1
+                624     POP_TOP
+                626     LOAD_GLOBAL                     0: tk
+                636     LOAD_ATTR                       28: Radiobutton
+                656     PUSH_NULL
+                658     LOAD_DEREF                      11: selection_window
+                660     LOAD_CONST                      24: 'Group'
+                662     LOAD_DEREF                      10: publish_var
+                664     LOAD_CONST                      24: 'Group'
+                666     LOAD_CONST                      3: '#1c1c1c'
+                668     LOAD_CONST                      12: 'white'
+                670     LOAD_FAST                       8: indicator_label
+                672     LOAD_FAST                       12: update_indicator
+                674     BUILD_TUPLE                     2
+                676     LOAD_CONST                      25: <CODE> <lambda>
+                678     MAKE_FUNCTION
+                680     SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                682     LOAD_CONST                      3: '#1c1c1c'
+                684     LOAD_CONST                      21: ('text', 'variable', 'value', 'bg', 'fg', 'command', 'selectcolor')
+                686     CALL_KW                         8
+                688     STORE_FAST                      4: group_radio
+                690     LOAD_FAST                       4: group_radio
+                692     LOAD_ATTR                       23: pack
+                712     LOAD_CONST                      22: 'w'
+                714     LOAD_CONST                      23: ('anchor',)
+                716     CALL_KW                         1
+                718     POP_TOP
+                720     LOAD_GLOBAL                     0: tk
+                730     LOAD_ATTR                       20: Label
+                750     PUSH_NULL
+                752     LOAD_DEREF                      11: selection_window
+                754     LOAD_CONST                      26: 'Selected: '
+                756     LOAD_DEREF                      10: publish_var
+                758     LOAD_ATTR                       31: get
+                778     CALL                            0
+                786     FORMAT_SIMPLE
+                788     BUILD_STRING                    2
+                790     LOAD_CONST                      3: '#1c1c1c'
+                792     LOAD_CONST                      12: 'white'
+                794     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                796     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                798     CALL_KW                         5
+                800     STORE_DEREF                     8: indicator_label
+                802     LOAD_DEREF                      8: indicator_label
+                804     LOAD_ATTR                       23: pack
+                824     LOAD_CONST                      27: 10
+                826     LOAD_CONST                      16: ('pady',)
+                828     CALL_KW                         1
+                830     POP_TOP
+                832     LOAD_FAST                       10: publish_var
+                834     BUILD_TUPLE                     1
+                836     LOAD_CONST                      28: <CODE> update_indicator
+                838     MAKE_FUNCTION
+                840     SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                842     STORE_DEREF                     12: update_indicator
+                844     LOAD_GLOBAL                     0: tk
+                854     LOAD_ATTR                       20: Label
+                874     PUSH_NULL
+                876     LOAD_DEREF                      11: selection_window
+                878     LOAD_CONST                      29: 'Enter ID:'
+                880     LOAD_CONST                      3: '#1c1c1c'
+                882     LOAD_CONST                      12: 'white'
+                884     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                886     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                888     CALL_KW                         5
+                890     LOAD_ATTR                       23: pack
+                910     LOAD_CONST                      15: 5
+                912     LOAD_CONST                      16: ('pady',)
+                914     CALL_KW                         1
+                916     POP_TOP
+                918     LOAD_GLOBAL                     0: tk
+                928     LOAD_ATTR                       32: Entry
+                948     PUSH_NULL
+                950     LOAD_DEREF                      11: selection_window
+                952     CALL                            1
+                960     STORE_DEREF                     7: id_entry
+                962     LOAD_DEREF                      7: id_entry
+                964     LOAD_ATTR                       23: pack
+                984     LOAD_CONST                      15: 5
+                986     LOAD_CONST                      16: ('pady',)
+                988     CALL_KW                         1
+                990     POP_TOP
+                992     LOAD_FAST                       7: id_entry
+                994     LOAD_FAST                       9: mode_var
+                996     LOAD_FAST                       10: publish_var
+                998     LOAD_FAST                       0: script_type
+                1000    LOAD_FAST                       11: selection_window
+                1002    BUILD_TUPLE                     5
+                1004    LOAD_CONST                      30: <CODE> confirm_selection
+                1006    MAKE_FUNCTION
+                1008    SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                1010    STORE_FAST                      5: confirm_selection
+                1012    LOAD_GLOBAL                     0: tk
+                1022    LOAD_ATTR                       34: Button
+                1042    PUSH_NULL
+                1044    LOAD_DEREF                      11: selection_window
+                1046    LOAD_CONST                      31: 'Confirm'
+                1048    LOAD_FAST                       5: confirm_selection
+                1050    LOAD_CONST                      32: '#333333'
+                1052    LOAD_CONST                      12: 'white'
+                1054    LOAD_CONST                      33: '#4d4d4d'
+                1056    LOAD_CONST                      12: 'white'
+                1058    LOAD_CONST                      13: ('Anonymous Pro', 12)
+                1060    LOAD_CONST                      34: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font')
+                1062    CALL_KW                         8
+                1064    STORE_FAST                      6: confirm_button
+                1066    LOAD_FAST                       6: confirm_button
+                1068    LOAD_ATTR                       23: pack
+                1088    LOAD_CONST                      27: 10
+                1090    LOAD_CONST                      16: ('pady',)
+                1092    CALL_KW                         1
+                1094    POP_TOP
+                1096    LOAD_GLOBAL                     17: NULL + center_window
+                1106    LOAD_DEREF                      11: selection_window
+                1108    CALL                            1
+                1116    POP_TOP
+                1118    RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: create_lua_script
+            Qualified Name: create_lua_script
+            Arg Count: 4
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'os'
+                'path'
+                'join'
+                'dirname'
+                'abspath'
+                '__file__'
+                'exists'
+                'messagebox'
+                'showerror'
+                'open'
+                'readlines'
+                'len'
+                'writelines'
+                'subprocess'
+                'Popen'
+                'print'
+                'Exception'
+            [Locals+Names]
+                'mode'
+                'publishing_type'
+                'id_value'
+                'script_type'
+                'lua_script_name'
+                'lua_script_path'
+                'lua_file'
+                'lua_script_lines'
+                'script_name'
+                'script_path'
+                'e'
+            [Constants]
+                None
+                'Animation ID Spoofing'
+                'Anim.lua'
+                'Script.lua'
+                'Lua'
+                'Error'
+                ' was not found, do you own Lanos V3 Pro? Purchase the Pro Version in Lounoo Leaks.'
+                'r'
+                7
+                ' does not have enough lines. Please check the script.'
+                'local Mode = "'
+                '"\n'
+                0
+                'local GroupToPublishToID = '
+                'Group'
+                'nil'
+                '\n'
+                5
+                'local UserToPublishToID = '
+                'User'
+                6
+                'w'
+                'notepad.exe'
+                'Anim.py'
+                'Script.py'
+                'Modules'
+                'Functions'
+                'python'
+                'Lua script created and opened successfully, along with the corresponding Python script.'
+                'Error writing to Lua script: '
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       3: script_type
+                4       LOAD_CONST                      1: 'Animation ID Spoofing'
+                6       COMPARE_OP                      88 (==)
+                10      POP_JUMP_IF_FALSE               2 (to 16)
+                14      LOAD_CONST                      2: 'Anim.lua'
+                16      JUMP_FORWARD                    1 (to 20)
+                18      LOAD_CONST                      3: 'Script.lua'
+                20      STORE_FAST                      4: lua_script_name
+                22      LOAD_GLOBAL                     0: os
+                32      LOAD_ATTR                       2: path
+                52      LOAD_ATTR                       5: join
+                72      LOAD_GLOBAL                     0: os
+                82      LOAD_ATTR                       2: path
+                102     LOAD_ATTR                       7: dirname
+                122     LOAD_GLOBAL                     0: os
+                132     LOAD_ATTR                       2: path
+                152     LOAD_ATTR                       9: abspath
+                172     LOAD_GLOBAL                     10: __file__
+                182     CALL                            1
+                190     CALL                            1
+                198     LOAD_CONST                      4: 'Lua'
+                200     LOAD_FAST                       4: lua_script_name
+                202     CALL                            3
+                210     STORE_FAST                      5: lua_script_path
+                212     LOAD_GLOBAL                     0: os
+                222     LOAD_ATTR                       2: path
+                242     LOAD_ATTR                       13: exists
+                262     LOAD_FAST                       5: lua_script_path
+                264     CALL                            1
+                272     TO_BOOL
+                280     POP_JUMP_IF_TRUE                27 (to 336)
+                284     LOAD_GLOBAL                     14: messagebox
+                294     LOAD_ATTR                       16: showerror
+                314     PUSH_NULL
+                316     LOAD_CONST                      5: 'Error'
+                318     LOAD_FAST                       4: lua_script_name
+                320     FORMAT_SIMPLE
+                322     LOAD_CONST                      6: ' was not found, do you own Lanos V3 Pro? Purchase the Pro Version in Lounoo Leaks.'
+                324     BUILD_STRING                    2
+                326     CALL                            2
+                334     POP_TOP
+                336     RETURN_CONST                    0: None
+                338     NOP
+                340     LOAD_GLOBAL                     19: NULL + open
+                350     LOAD_FAST                       5: lua_script_path
+                352     LOAD_CONST                      7: 'r'
+                354     CALL                            2
+                362     BEFORE_WITH
+                364     STORE_FAST                      6: lua_file
+                366     LOAD_FAST                       6: lua_file
+                368     LOAD_ATTR                       21: readlines
+                388     CALL                            0
+                396     STORE_FAST                      7: lua_script_lines
+                398     LOAD_CONST                      0: None
+                400     LOAD_CONST                      0: None
+                402     LOAD_CONST                      0: None
+                404     CALL                            2
+                412     POP_TOP
+                414     LOAD_GLOBAL                     23: NULL + len
+                424     LOAD_FAST_CHECK                 7: lua_script_lines
+                426     CALL                            1
+                434     LOAD_CONST                      8: 7
+                436     COMPARE_OP                      18 (<)
+                440     POP_JUMP_IF_FALSE               27 (to 496)
+                444     LOAD_GLOBAL                     14: messagebox
+                454     LOAD_ATTR                       16: showerror
+                474     PUSH_NULL
+                476     LOAD_CONST                      5: 'Error'
+                478     LOAD_FAST                       4: lua_script_name
+                480     FORMAT_SIMPLE
+                482     LOAD_CONST                      9: ' does not have enough lines. Please check the script.'
+                484     BUILD_STRING                    2
+                486     CALL                            2
+                494     POP_TOP
+                496     RETURN_CONST                    0: None
+                498     LOAD_CONST                      10: 'local Mode = "'
+                500     LOAD_FAST                       0: mode
+                502     FORMAT_SIMPLE
+                504     LOAD_CONST                      11: '"\n'
+                506     BUILD_STRING                    3
+                508     LOAD_FAST                       7: lua_script_lines
+                510     LOAD_CONST                      12: 0
+                512     STORE_SUBSCR
+                516     LOAD_CONST                      13: 'local GroupToPublishToID = '
+                518     LOAD_FAST                       1: publishing_type
+                520     LOAD_CONST                      14: 'Group'
+                522     COMPARE_OP                      88 (==)
+                526     POP_JUMP_IF_FALSE               3 (to 534)
+                530     LOAD_FAST                       2: id_value
+                532     FORMAT_SIMPLE
+                534     JUMP_FORWARD                    1 (to 538)
+                536     LOAD_CONST                      15: 'nil'
+                538     FORMAT_SIMPLE
+                540     LOAD_CONST                      16: '\n'
+                542     BUILD_STRING                    3
+                544     LOAD_FAST                       7: lua_script_lines
+                546     LOAD_CONST                      17: 5
+                548     STORE_SUBSCR
+                552     LOAD_CONST                      18: 'local UserToPublishToID = '
+                554     LOAD_FAST                       1: publishing_type
+                556     LOAD_CONST                      19: 'User'
+                558     COMPARE_OP                      88 (==)
+                562     POP_JUMP_IF_FALSE               3 (to 570)
+                566     LOAD_FAST                       2: id_value
+                568     FORMAT_SIMPLE
+                570     JUMP_FORWARD                    1 (to 574)
+                572     LOAD_CONST                      15: 'nil'
+                574     FORMAT_SIMPLE
+                576     LOAD_CONST                      16: '\n'
+                578     BUILD_STRING                    3
+                580     LOAD_FAST                       7: lua_script_lines
+                582     LOAD_CONST                      20: 6
+                584     STORE_SUBSCR
+                588     LOAD_GLOBAL                     19: NULL + open
+                598     LOAD_FAST                       5: lua_script_path
+                600     LOAD_CONST                      21: 'w'
+                602     CALL                            2
+                610     BEFORE_WITH
+                612     STORE_FAST                      6: lua_file
+                614     LOAD_FAST                       6: lua_file
+                616     LOAD_ATTR                       25: writelines
+                636     LOAD_FAST                       7: lua_script_lines
+                638     CALL                            1
+                646     POP_TOP
+                648     LOAD_CONST                      0: None
+                650     LOAD_CONST                      0: None
+                652     LOAD_CONST                      0: None
+                654     CALL                            2
+                662     POP_TOP
+                664     LOAD_GLOBAL                     26: subprocess
+                674     LOAD_ATTR                       28: Popen
+                694     PUSH_NULL
+                696     LOAD_CONST                      22: 'notepad.exe'
+                698     LOAD_FAST                       5: lua_script_path
+                700     BUILD_LIST                      2
+                702     CALL                            1
+                710     POP_TOP
+                712     LOAD_FAST                       3: script_type
+                714     LOAD_CONST                      1: 'Animation ID Spoofing'
+                716     COMPARE_OP                      88 (==)
+                720     POP_JUMP_IF_FALSE               2 (to 726)
+                724     LOAD_CONST                      23: 'Anim.py'
+                726     JUMP_FORWARD                    1 (to 730)
+                728     LOAD_CONST                      24: 'Script.py'
+                730     STORE_FAST                      8: script_name
+                732     LOAD_GLOBAL                     0: os
+                742     LOAD_ATTR                       2: path
+                762     LOAD_ATTR                       5: join
+                782     LOAD_GLOBAL                     0: os
+                792     LOAD_ATTR                       2: path
+                812     LOAD_ATTR                       7: dirname
+                832     LOAD_GLOBAL                     0: os
+                842     LOAD_ATTR                       2: path
+                862     LOAD_ATTR                       9: abspath
+                882     LOAD_GLOBAL                     10: __file__
+                892     CALL                            1
+                900     CALL                            1
+                908     LOAD_CONST                      25: 'Modules'
+                910     LOAD_CONST                      26: 'Functions'
+                912     LOAD_FAST                       8: script_name
+                914     CALL                            4
+                922     STORE_FAST                      9: script_path
+                924     LOAD_GLOBAL                     26: subprocess
+                934     LOAD_ATTR                       28: Popen
+                954     PUSH_NULL
+                956     LOAD_CONST                      27: 'python'
+                958     LOAD_FAST                       9: script_path
+                960     BUILD_LIST                      2
+                962     CALL                            1
+                970     POP_TOP
+                972     LOAD_GLOBAL                     31: NULL + print
+                982     LOAD_CONST                      28: 'Lua script created and opened successfully, along with the corresponding Python script.'
+                984     CALL                            1
+                992     POP_TOP
+                994     RETURN_CONST                    0: None
+                996     PUSH_EXC_INFO
+                998     WITH_EXCEPT_START
+                1000    TO_BOOL
+                1008    POP_JUMP_IF_TRUE                1 (to 1012)
+                1012    RERAISE                         2
+                1014    POP_TOP
+                1016    POP_EXCEPT
+                1018    POP_TOP
+                1020    POP_TOP
+                1022    JUMP_BACKWARD_NO_INTERRUPT      306 (to 414)
+                1026    COPY                            3
+                1028    POP_EXCEPT
+                1030    RERAISE                         1
+                1032    PUSH_EXC_INFO
+                1034    WITH_EXCEPT_START
+                1036    TO_BOOL
+                1044    POP_JUMP_IF_TRUE                1 (to 1048)
+                1048    RERAISE                         2
+                1050    POP_TOP
+                1052    POP_EXCEPT
+                1054    POP_TOP
+                1056    POP_TOP
+                1058    JUMP_BACKWARD_NO_INTERRUPT      198 (to 664)
+                1060    COPY                            3
+                1062    POP_EXCEPT
+                1064    RERAISE                         1
+                1066    PUSH_EXC_INFO
+                1068    LOAD_GLOBAL                     32: Exception
+                1078    CHECK_EXC_MATCH
+                1080    POP_JUMP_IF_FALSE               36 (to 1154)
+                1084    STORE_FAST                      10: e
+                1086    LOAD_GLOBAL                     14: messagebox
+                1096    LOAD_ATTR                       16: showerror
+                1116    PUSH_NULL
+                1118    LOAD_CONST                      5: 'Error'
+                1120    LOAD_CONST                      29: 'Error writing to Lua script: '
+                1122    LOAD_FAST                       10: e
+                1124    FORMAT_SIMPLE
+                1126    BUILD_STRING                    2
+                1128    CALL                            2
+                1136    POP_TOP
+                1138    POP_EXCEPT
+                1140    LOAD_CONST                      0: None
+                1142    STORE_FAST                      10: e
+                1144    DELETE_FAST                     10: e
+                1146    RETURN_CONST                    0: None
+                1148    LOAD_CONST                      0: None
+                1150    STORE_FAST                      10: e
+                1152    DELETE_FAST                     10: e
+                1154    RERAISE                         1
+                1156    RERAISE                         0
+                1158    COPY                            3
+                1160    POP_EXCEPT
+                1162    RERAISE                         1
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: reset_lua_scripts
+            Qualified Name: reset_lua_scripts
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 8
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'os'
+                'path'
+                'join'
+                'dirname'
+                'abspath'
+                '__file__'
+                'exists'
+                'print'
+                'open'
+                'readlines'
+                'writelines'
+                'Exception'
+            [Locals+Names]
+                'scripts'
+                'script'
+                'lua_script_path'
+                'lua_file'
+                'lua_script_lines'
+                'e'
+            [Constants]
+                None
+                'Anim.lua'
+                'Script.lua'
+                'Lua'
+                'Warning: '
+                ' not found for reset.'
+                'r'
+                'local Mode = "nil"\n'
+                0
+                'local GroupToPublishToID = nil\n'
+                5
+                'local UserToPublishToID = nil\n'
+                6
+                'w'
+                ' reset to default values.'
+                'Error resetting '
+                ': '
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_CONST                      1: 'Anim.lua'
+                4       LOAD_CONST                      2: 'Script.lua'
+                6       BUILD_LIST                      2
+                8       STORE_FAST                      0: scripts
+                10      LOAD_FAST                       0: scripts
+                12      GET_ITER
+                14      FOR_ITER                        257 (to 532)
+                20      STORE_FAST                      1: script
+                22      LOAD_GLOBAL                     0: os
+                32      LOAD_ATTR                       2: path
+                52      LOAD_ATTR                       5: join
+                72      LOAD_GLOBAL                     0: os
+                82      LOAD_ATTR                       2: path
+                102     LOAD_ATTR                       7: dirname
+                122     LOAD_GLOBAL                     0: os
+                132     LOAD_ATTR                       2: path
+                152     LOAD_ATTR                       9: abspath
+                172     LOAD_GLOBAL                     10: __file__
+                182     CALL                            1
+                190     CALL                            1
+                198     LOAD_CONST                      3: 'Lua'
+                200     LOAD_FAST                       1: script
+                202     CALL                            3
+                210     STORE_FAST                      2: lua_script_path
+                212     LOAD_GLOBAL                     0: os
+                222     LOAD_ATTR                       2: path
+                242     LOAD_ATTR                       13: exists
+                262     LOAD_FAST                       2: lua_script_path
+                264     CALL                            1
+                272     TO_BOOL
+                280     POP_JUMP_IF_TRUE                17 (to 316)
+                284     LOAD_GLOBAL                     15: NULL + print
+                294     LOAD_CONST                      4: 'Warning: '
+                296     LOAD_FAST                       1: script
+                298     FORMAT_SIMPLE
+                300     LOAD_CONST                      5: ' not found for reset.'
+                302     BUILD_STRING                    3
+                304     CALL                            1
+                312     POP_TOP
+                314     JUMP_BACKWARD                   152 (to 12)
+                318     NOP
+                320     LOAD_GLOBAL                     17: NULL + open
+                330     LOAD_FAST                       2: lua_script_path
+                332     LOAD_CONST                      6: 'r'
+                334     CALL                            2
+                342     BEFORE_WITH
+                344     STORE_FAST                      3: lua_file
+                346     LOAD_FAST                       3: lua_file
+                348     LOAD_ATTR                       19: readlines
+                368     CALL                            0
+                376     STORE_FAST                      4: lua_script_lines
+                378     LOAD_CONST                      0: None
+                380     LOAD_CONST                      0: None
+                382     LOAD_CONST                      0: None
+                384     CALL                            2
+                392     POP_TOP
+                394     LOAD_CONST                      7: 'local Mode = "nil"\n'
+                396     LOAD_FAST_CHECK                 4: lua_script_lines
+                398     LOAD_CONST                      8: 0
+                400     STORE_SUBSCR
+                404     LOAD_CONST                      9: 'local GroupToPublishToID = nil\n'
+                406     LOAD_FAST                       4: lua_script_lines
+                408     LOAD_CONST                      10: 5
+                410     STORE_SUBSCR
+                414     LOAD_CONST                      11: 'local UserToPublishToID = nil\n'
+                416     LOAD_FAST                       4: lua_script_lines
+                418     LOAD_CONST                      12: 6
+                420     STORE_SUBSCR
+                424     LOAD_GLOBAL                     17: NULL + open
+                434     LOAD_FAST                       2: lua_script_path
+                436     LOAD_CONST                      13: 'w'
+                438     CALL                            2
+                446     BEFORE_WITH
+                448     STORE_FAST                      3: lua_file
+                450     LOAD_FAST                       3: lua_file
+                452     LOAD_ATTR                       21: writelines
+                472     LOAD_FAST                       4: lua_script_lines
+                474     CALL                            1
+                482     POP_TOP
+                484     LOAD_CONST                      0: None
+                486     LOAD_CONST                      0: None
+                488     LOAD_CONST                      0: None
+                490     CALL                            2
+                498     POP_TOP
+                500     LOAD_GLOBAL                     15: NULL + print
+                510     LOAD_FAST                       1: script
+                512     FORMAT_SIMPLE
+                514     LOAD_CONST                      14: ' reset to default values.'
+                516     BUILD_STRING                    2
+                518     CALL                            1
+                526     POP_TOP
+                528     JUMP_BACKWARD                   260 (to 12)
+                534     END_FOR
+                536     POP_TOP
+                538     RETURN_CONST                    0: None
+                540     PUSH_EXC_INFO
+                542     WITH_EXCEPT_START
+                544     TO_BOOL
+                552     POP_JUMP_IF_TRUE                1 (to 556)
+                556     RERAISE                         2
+                558     POP_TOP
+                560     POP_EXCEPT
+                562     POP_TOP
+                564     POP_TOP
+                566     JUMP_BACKWARD_NO_INTERRUPT      87 (to 394)
+                568     COPY                            3
+                570     POP_EXCEPT
+                572     RERAISE                         1
+                574     PUSH_EXC_INFO
+                576     WITH_EXCEPT_START
+                578     TO_BOOL
+                586     POP_JUMP_IF_TRUE                1 (to 590)
+                590     RERAISE                         2
+                592     POP_TOP
+                594     POP_EXCEPT
+                596     POP_TOP
+                598     POP_TOP
+                600     JUMP_BACKWARD_NO_INTERRUPT      51 (to 500)
+                602     COPY                            3
+                604     POP_EXCEPT
+                606     RERAISE                         1
+                608     PUSH_EXC_INFO
+                610     LOAD_GLOBAL                     22: Exception
+                620     CHECK_EXC_MATCH
+                622     POP_JUMP_IF_FALSE               29 (to 682)
+                626     STORE_FAST                      5: e
+                628     LOAD_GLOBAL                     15: NULL + print
+                638     LOAD_CONST                      15: 'Error resetting '
+                640     LOAD_FAST                       1: script
+                642     FORMAT_SIMPLE
+                644     LOAD_CONST                      16: ': '
+                646     LOAD_FAST                       5: e
+                648     FORMAT_SIMPLE
+                650     BUILD_STRING                    4
+                652     CALL                            1
+                660     POP_TOP
+                662     POP_EXCEPT
+                664     LOAD_CONST                      0: None
+                666     STORE_FAST                      5: e
+                668     DELETE_FAST                     5: e
+                670     JUMP_BACKWARD                   331 (to 12)
+                676     LOAD_CONST                      0: None
+                678     STORE_FAST                      5: e
+                680     DELETE_FAST                     5: e
+                682     RERAISE                         1
+                684     RERAISE                         0
+                686     COPY                            3
+                688     POP_EXCEPT
+                690     RERAISE                         1
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: open_animation_spoofing
+            Qualified Name: open_animation_spoofing
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'handle_selection'
+            [Locals+Names]
+            [Constants]
+                None
+                'Animation ID Spoofing'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + handle_selection
+                12      LOAD_CONST                      1: 'Animation ID Spoofing'
+                14      CALL                            1
+                22      POP_TOP
+                24      RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: open_script_spoofing
+            Qualified Name: open_script_spoofing
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'handle_selection'
+            [Locals+Names]
+            [Constants]
+                None
+                'Script ID Spoofing'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + handle_selection
+                12      LOAD_CONST                      1: 'Script ID Spoofing'
+                14      CALL                            1
+                22      POP_TOP
+                24      RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: exit_application
+            Qualified Name: exit_application
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 3
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'print'
+                'processes'
+                'terminate'
+                'reset_lua_scripts'
+                'root'
+                'quit'
+                'destroy'
+            [Locals+Names]
+                'process'
+            [Constants]
+                None
+                'Exiting application...'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     1: NULL + print
+                12      LOAD_CONST                      1: 'Exiting application...'
+                14      CALL                            1
+                22      POP_TOP
+                24      LOAD_GLOBAL                     2: processes
+                34      GET_ITER
+                36      FOR_ITER                        19 (to 76)
+                40      STORE_FAST                      0: process
+                42      LOAD_FAST                       0: process
+                44      LOAD_ATTR                       5: terminate
+                64      CALL                            0
+                72      POP_TOP
+                74      JUMP_BACKWARD                   21 (to 34)
+                78      END_FOR
+                80      POP_TOP
+                82      LOAD_GLOBAL                     7: NULL + reset_lua_scripts
+                92      CALL                            0
+                100     POP_TOP
+                102     LOAD_GLOBAL                     8: root
+                112     LOAD_ATTR                       11: quit
+                132     CALL                            0
+                140     POP_TOP
+                142     LOAD_GLOBAL                     8: root
+                152     LOAD_ATTR                       13: destroy
+                172     CALL                            0
+                180     POP_TOP
+                182     RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: center_window
+            Qualified Name: center_window
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 9
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'update_idletasks'
+                'winfo_width'
+                'winfo_height'
+                'winfo_screenwidth'
+                'winfo_screenheight'
+                'geometry'
+            [Locals+Names]
+                'window'
+                'width'
+                'height'
+                'x'
+                'y'
+            [Constants]
+                None
+                2
+                'x'
+                '+'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       0: window
+                4       LOAD_ATTR                       1: update_idletasks
+                24      CALL                            0
+                32      POP_TOP
+                34      LOAD_FAST                       0: window
+                36      LOAD_ATTR                       3: winfo_width
+                56      CALL                            0
+                64      STORE_FAST                      1: width
+                66      LOAD_FAST                       0: window
+                68      LOAD_ATTR                       5: winfo_height
+                88      CALL                            0
+                96      STORE_FAST                      2: height
+                98      LOAD_FAST                       0: window
+                100     LOAD_ATTR                       7: winfo_screenwidth
+                120     CALL                            0
+                128     LOAD_CONST                      1: 2
+                130     BINARY_OP                       2 (//)
+                134     LOAD_FAST                       1: width
+                136     LOAD_CONST                      1: 2
+                138     BINARY_OP                       2 (//)
+                142     BINARY_OP                       10 (-)
+                146     STORE_FAST                      3: x
+                148     LOAD_FAST                       0: window
+                150     LOAD_ATTR                       9: winfo_screenheight
+                170     CALL                            0
+                178     LOAD_CONST                      1: 2
+                180     BINARY_OP                       2 (//)
+                184     LOAD_FAST                       2: height
+                186     LOAD_CONST                      1: 2
+                188     BINARY_OP                       2 (//)
+                192     BINARY_OP                       10 (-)
+                196     STORE_FAST                      4: y
+                198     LOAD_FAST                       0: window
+                200     LOAD_ATTR                       11: geometry
+                220     LOAD_FAST                       1: width
+                222     FORMAT_SIMPLE
+                224     LOAD_CONST                      2: 'x'
+                226     LOAD_FAST                       2: height
+                228     FORMAT_SIMPLE
+                230     LOAD_CONST                      3: '+'
+                232     LOAD_FAST                       3: x
+                234     FORMAT_SIMPLE
+                236     LOAD_CONST                      3: '+'
+                238     LOAD_FAST                       4: y
+                240     FORMAT_SIMPLE
+                242     BUILD_STRING                    7
+                244     CALL                            1
+                252     POP_TOP
+                254     RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: replace_cookie
+            Qualified Name: replace_cookie
+            Arg Count: 1
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 7
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'os'
+                'path'
+                'join'
+                'dirname'
+                'abspath'
+                '__file__'
+                'exists'
+                'messagebox'
+                'showerror'
+                'open'
+                'readlines'
+                'len'
+                'writelines'
+                'showinfo'
+                'Exception'
+            [Locals+Names]
+                'cookie_value'
+                'status_file_path'
+                'file'
+                'lines'
+                'e'
+            [Constants]
+                None
+                'Status'
+                'STATUS.txt'
+                'Error'
+                'STATUS.txt file not found.'
+                'r'
+                2
+                'STATUS.txt does not have enough lines.'
+                'COOKIE='
+                '\n'
+                1
+                'w'
+                'Success'
+                'Cookie successfully replaced in STATUS.txt.'
+                'Failed to replace cookie: '
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: os
+                12      LOAD_ATTR                       2: path
+                32      LOAD_ATTR                       5: join
+                52      LOAD_GLOBAL                     0: os
+                62      LOAD_ATTR                       2: path
+                82      LOAD_ATTR                       7: dirname
+                102     LOAD_GLOBAL                     0: os
+                112     LOAD_ATTR                       2: path
+                132     LOAD_ATTR                       9: abspath
+                152     LOAD_GLOBAL                     10: __file__
+                162     CALL                            1
+                170     CALL                            1
+                178     LOAD_CONST                      1: 'Status'
+                180     LOAD_CONST                      2: 'STATUS.txt'
+                182     CALL                            3
+                190     STORE_FAST                      1: status_file_path
+                192     LOAD_GLOBAL                     0: os
+                202     LOAD_ATTR                       2: path
+                222     LOAD_ATTR                       13: exists
+                242     LOAD_FAST                       1: status_file_path
+                244     CALL                            1
+                252     TO_BOOL
+                260     POP_JUMP_IF_TRUE                24 (to 310)
+                264     LOAD_GLOBAL                     14: messagebox
+                274     LOAD_ATTR                       16: showerror
+                294     PUSH_NULL
+                296     LOAD_CONST                      3: 'Error'
+                298     LOAD_CONST                      4: 'STATUS.txt file not found.'
+                300     CALL                            2
+                308     POP_TOP
+                310     RETURN_CONST                    0: None
+                312     NOP
+                314     LOAD_GLOBAL                     19: NULL + open
+                324     LOAD_FAST                       1: status_file_path
+                326     LOAD_CONST                      5: 'r'
+                328     CALL                            2
+                336     BEFORE_WITH
+                338     STORE_FAST                      2: file
+                340     LOAD_FAST                       2: file
+                342     LOAD_ATTR                       21: readlines
+                362     CALL                            0
+                370     STORE_FAST                      3: lines
+                372     LOAD_CONST                      0: None
+                374     LOAD_CONST                      0: None
+                376     LOAD_CONST                      0: None
+                378     CALL                            2
+                386     POP_TOP
+                388     LOAD_GLOBAL                     23: NULL + len
+                398     LOAD_FAST_CHECK                 3: lines
+                400     CALL                            1
+                408     LOAD_CONST                      6: 2
+                410     COMPARE_OP                      18 (<)
+                414     POP_JUMP_IF_FALSE               24 (to 464)
+                418     LOAD_GLOBAL                     14: messagebox
+                428     LOAD_ATTR                       16: showerror
+                448     PUSH_NULL
+                450     LOAD_CONST                      3: 'Error'
+                452     LOAD_CONST                      7: 'STATUS.txt does not have enough lines.'
+                454     CALL                            2
+                462     POP_TOP
+                464     RETURN_CONST                    0: None
+                466     LOAD_CONST                      8: 'COOKIE='
+                468     LOAD_FAST                       0: cookie_value
+                470     FORMAT_SIMPLE
+                472     LOAD_CONST                      9: '\n'
+                474     BUILD_STRING                    3
+                476     LOAD_FAST                       3: lines
+                478     LOAD_CONST                      10: 1
+                480     STORE_SUBSCR
+                484     LOAD_GLOBAL                     19: NULL + open
+                494     LOAD_FAST                       1: status_file_path
+                496     LOAD_CONST                      11: 'w'
+                498     CALL                            2
+                506     BEFORE_WITH
+                508     STORE_FAST                      2: file
+                510     LOAD_FAST                       2: file
+                512     LOAD_ATTR                       25: writelines
+                532     LOAD_FAST                       3: lines
+                534     CALL                            1
+                542     POP_TOP
+                544     LOAD_CONST                      0: None
+                546     LOAD_CONST                      0: None
+                548     LOAD_CONST                      0: None
+                550     CALL                            2
+                558     POP_TOP
+                560     LOAD_GLOBAL                     14: messagebox
+                570     LOAD_ATTR                       26: showinfo
+                590     PUSH_NULL
+                592     LOAD_CONST                      12: 'Success'
+                594     LOAD_CONST                      13: 'Cookie successfully replaced in STATUS.txt.'
+                596     CALL                            2
+                604     POP_TOP
+                606     RETURN_CONST                    0: None
+                608     PUSH_EXC_INFO
+                610     WITH_EXCEPT_START
+                612     TO_BOOL
+                620     POP_JUMP_IF_TRUE                1 (to 624)
+                624     RERAISE                         2
+                626     POP_TOP
+                628     POP_EXCEPT
+                630     POP_TOP
+                632     POP_TOP
+                634     JUMP_BACKWARD_NO_INTERRUPT      124 (to 388)
+                636     COPY                            3
+                638     POP_EXCEPT
+                640     RERAISE                         1
+                642     PUSH_EXC_INFO
+                644     WITH_EXCEPT_START
+                646     TO_BOOL
+                654     POP_JUMP_IF_TRUE                1 (to 658)
+                658     RERAISE                         2
+                660     POP_TOP
+                662     POP_EXCEPT
+                664     POP_TOP
+                666     POP_TOP
+                668     JUMP_BACKWARD_NO_INTERRUPT      55 (to 560)
+                670     COPY                            3
+                672     POP_EXCEPT
+                674     RERAISE                         1
+                676     PUSH_EXC_INFO
+                678     LOAD_GLOBAL                     28: Exception
+                688     CHECK_EXC_MATCH
+                690     POP_JUMP_IF_FALSE               36 (to 764)
+                694     STORE_FAST                      4: e
+                696     LOAD_GLOBAL                     14: messagebox
+                706     LOAD_ATTR                       16: showerror
+                726     PUSH_NULL
+                728     LOAD_CONST                      3: 'Error'
+                730     LOAD_CONST                      14: 'Failed to replace cookie: '
+                732     LOAD_FAST                       4: e
+                734     FORMAT_SIMPLE
+                736     BUILD_STRING                    2
+                738     CALL                            2
+                746     POP_TOP
+                748     POP_EXCEPT
+                750     LOAD_CONST                      0: None
+                752     STORE_FAST                      4: e
+                754     DELETE_FAST                     4: e
+                756     RETURN_CONST                    0: None
+                758     LOAD_CONST                      0: None
+                760     STORE_FAST                      4: e
+                762     DELETE_FAST                     4: e
+                764     RERAISE                         1
+                766     RERAISE                         0
+                768     COPY                            3
+                770     POP_EXCEPT
+                772     RERAISE                         1
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: prompt_for_cookie
+            Qualified Name: prompt_for_cookie
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 9
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'tk'
+                'Toplevel'
+                'root'
+                'title'
+                'resizable'
+                'wm_attributes'
+                'winfo_screenwidth'
+                'winfo_screenheight'
+                'geometry'
+                'configure'
+                'Label'
+                'pack'
+                'Entry'
+            [Locals+Names]
+                'cookie_window'
+                'width'
+                'height'
+                'x'
+                'y'
+                'check_cookie'
+                'cookie_entry'
+                'cookie_status_label'
+            [Constants]
+                None
+                'Enter Cookie'
+                False
+                '-alpha'
+                0.9
+                (
+                    300
+                    200
+                )
+                2
+                'x'
+                '+'
+                '#1c1c1c'
+                (
+                    'bg'
+                )
+                'Enter Cookie:'
+                'white'
+                (
+                    'Anonymous Pro'
+                    12
+                )
+                (
+                    'text'
+                    'bg'
+                    'fg'
+                    'font'
+                )
+                10
+                (
+                    'pady'
+                )
+                30
+                (
+                    'width'
+                )
+                5
+                ''
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: check_cookie
+                    Qualified Name: prompt_for_cookie.<locals>.check_cookie
+                    Arg Count: 0
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 7
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                        'get'
+                        'strip'
+                        'config'
+                        'os'
+                        'path'
+                        'join'
+                        'dirname'
+                        'abspath'
+                        '__file__'
+                        'subprocess'
+                        'Popen'
+                        'PIPE'
+                        'CREATE_NO_WINDOW'
+                        'communicate'
+                        'decode'
+                    [Locals+Names]
+                        'cookie_value'
+                        'script_path'
+                        'process'
+                        'stdout'
+                        'stderr'
+                        'cookie_entry'
+                        'cookie_status_label'
+                    [Constants]
+                        None
+                        'Please Enter A Cookie.'
+                        'yellow'
+                        (
+                            'text'
+                            'fg'
+                        )
+                        'Modules'
+                        'CookieCheck.js'
+                        'node'
+                        (
+                            'stdout'
+                            'stderr'
+                            'creationflags'
+                        )
+                        'Invalid Cookie Input.'
+                        'red'
+                        'valid'
+                        'Cookie Is Valid.'
+                        'green'
+                        'Cookie Is Invalid.'
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  2
+                        2       RESUME                          0
+                        4       LOAD_DEREF                      5: cookie_entry
+                        6       LOAD_ATTR                       1: get
+                        26      CALL                            0
+                        34      LOAD_ATTR                       3: strip
+                        54      CALL                            0
+                        62      STORE_FAST                      0: cookie_value
+                        64      LOAD_FAST                       0: cookie_value
+                        66      TO_BOOL
+                        74      POP_JUMP_IF_TRUE                17 (to 110)
+                        78      LOAD_DEREF                      6: cookie_status_label
+                        80      LOAD_ATTR                       5: config
+                        100     LOAD_CONST                      1: 'Please Enter A Cookie.'
+                        102     LOAD_CONST                      2: 'yellow'
+                        104     LOAD_CONST                      3: ('text', 'fg')
+                        106     CALL_KW                         2
+                        108     POP_TOP
+                        110     RETURN_CONST                    0: None
+                        112     LOAD_GLOBAL                     6: os
+                        122     LOAD_ATTR                       8: path
+                        142     LOAD_ATTR                       11: join
+                        162     LOAD_GLOBAL                     6: os
+                        172     LOAD_ATTR                       8: path
+                        192     LOAD_ATTR                       13: dirname
+                        212     LOAD_GLOBAL                     6: os
+                        222     LOAD_ATTR                       8: path
+                        242     LOAD_ATTR                       15: abspath
+                        262     LOAD_GLOBAL                     16: __file__
+                        272     CALL                            1
+                        280     CALL                            1
+                        288     LOAD_CONST                      4: 'Modules'
+                        290     LOAD_CONST                      5: 'CookieCheck.js'
+                        292     CALL                            3
+                        300     STORE_FAST                      1: script_path
+                        302     LOAD_GLOBAL                     18: subprocess
+                        312     LOAD_ATTR                       20: Popen
+                        332     PUSH_NULL
+                        334     LOAD_CONST                      6: 'node'
+                        336     LOAD_FAST_LOAD_FAST             16: script_path, cookie_value
+                        338     BUILD_LIST                      3
+                        340     LOAD_GLOBAL                     18: subprocess
+                        350     LOAD_ATTR                       22: PIPE
+                        370     LOAD_GLOBAL                     18: subprocess
+                        380     LOAD_ATTR                       22: PIPE
+                        400     LOAD_GLOBAL                     18: subprocess
+                        410     LOAD_ATTR                       24: CREATE_NO_WINDOW
+                        430     LOAD_CONST                      7: ('stdout', 'stderr', 'creationflags')
+                        432     CALL_KW                         4
+                        434     STORE_FAST                      2: process
+                        436     LOAD_FAST                       2: process
+                        438     LOAD_ATTR                       27: communicate
+                        458     CALL                            0
+                        466     UNPACK_SEQUENCE                 2
+                        470     STORE_FAST_STORE_FAST           52: stdout, stderr
+                        472     LOAD_FAST                       4: stderr
+                        474     TO_BOOL
+                        482     POP_JUMP_IF_FALSE               17 (to 518)
+                        486     LOAD_DEREF                      6: cookie_status_label
+                        488     LOAD_ATTR                       5: config
+                        508     LOAD_CONST                      8: 'Invalid Cookie Input.'
+                        510     LOAD_CONST                      9: 'red'
+                        512     LOAD_CONST                      3: ('text', 'fg')
+                        514     CALL_KW                         2
+                        516     POP_TOP
+                        518     RETURN_CONST                    0: None
+                        520     LOAD_CONST                      10: 'valid'
+                        522     LOAD_FAST                       3: stdout
+                        524     LOAD_ATTR                       29: decode
+                        544     CALL                            0
+                        552     CONTAINS_OP                     0 (in)
+                        556     POP_JUMP_IF_FALSE               17 (to 592)
+                        560     LOAD_DEREF                      6: cookie_status_label
+                        562     LOAD_ATTR                       5: config
+                        582     LOAD_CONST                      11: 'Cookie Is Valid.'
+                        584     LOAD_CONST                      12: 'green'
+                        586     LOAD_CONST                      3: ('text', 'fg')
+                        588     CALL_KW                         2
+                        590     POP_TOP
+                        592     RETURN_CONST                    0: None
+                        594     LOAD_DEREF                      6: cookie_status_label
+                        596     LOAD_ATTR                       5: config
+                        616     LOAD_CONST                      13: 'Cookie Is Invalid.'
+                        618     LOAD_CONST                      9: 'red'
+                        620     LOAD_CONST                      3: ('text', 'fg')
+                        622     CALL_KW                         2
+                        624     POP_TOP
+                        626     RETURN_CONST                    0: None
+            [Disassembly]
+                0       MAKE_CELL                       6: cookie_entry
+                2       MAKE_CELL                       7: cookie_status_label
+                4       RESUME                          0
+                6       LOAD_GLOBAL                     0: tk
+                16      LOAD_ATTR                       2: Toplevel
+                36      PUSH_NULL
+                38      LOAD_GLOBAL                     4: root
+                48      CALL                            1
+                56      STORE_FAST                      0: cookie_window
+                58      LOAD_FAST                       0: cookie_window
+                60      LOAD_ATTR                       7: title
+                80      LOAD_CONST                      1: 'Enter Cookie'
+                82      CALL                            1
+                90      POP_TOP
+                92      LOAD_FAST                       0: cookie_window
+                94      LOAD_ATTR                       9: resizable
+                114     LOAD_CONST                      2: False
+                116     LOAD_CONST                      2: False
+                118     CALL                            2
+                126     POP_TOP
+                128     LOAD_FAST                       0: cookie_window
+                130     LOAD_ATTR                       11: wm_attributes
+                150     LOAD_CONST                      3: '-alpha'
+                152     LOAD_CONST                      4: 0.9
+                154     CALL                            2
+                162     POP_TOP
+                164     LOAD_CONST                      5: (300, 200)
+                166     UNPACK_SEQUENCE                 2
+                170     STORE_FAST_STORE_FAST           18: width, height
+                172     LOAD_FAST                       0: cookie_window
+                174     LOAD_ATTR                       13: winfo_screenwidth
+                194     CALL                            0
+                202     LOAD_CONST                      6: 2
+                204     BINARY_OP                       2 (//)
+                208     LOAD_FAST                       1: width
+                210     LOAD_CONST                      6: 2
+                212     BINARY_OP                       2 (//)
+                216     BINARY_OP                       10 (-)
+                220     STORE_FAST                      3: x
+                222     LOAD_FAST                       0: cookie_window
+                224     LOAD_ATTR                       15: winfo_screenheight
+                244     CALL                            0
+                252     LOAD_CONST                      6: 2
+                254     BINARY_OP                       2 (//)
+                258     LOAD_FAST                       2: height
+                260     LOAD_CONST                      6: 2
+                262     BINARY_OP                       2 (//)
+                266     BINARY_OP                       10 (-)
+                270     STORE_FAST                      4: y
+                272     LOAD_FAST                       0: cookie_window
+                274     LOAD_ATTR                       17: geometry
+                294     LOAD_FAST                       1: width
+                296     FORMAT_SIMPLE
+                298     LOAD_CONST                      7: 'x'
+                300     LOAD_FAST                       2: height
+                302     FORMAT_SIMPLE
+                304     LOAD_CONST                      8: '+'
+                306     LOAD_FAST                       3: x
+                308     FORMAT_SIMPLE
+                310     LOAD_CONST                      8: '+'
+                312     LOAD_FAST                       4: y
+                314     FORMAT_SIMPLE
+                316     BUILD_STRING                    7
+                318     CALL                            1
+                326     POP_TOP
+                328     LOAD_FAST                       0: cookie_window
+                330     LOAD_ATTR                       19: configure
+                350     LOAD_CONST                      9: '#1c1c1c'
+                352     LOAD_CONST                      10: ('bg',)
+                354     CALL_KW                         1
+                356     POP_TOP
+                358     LOAD_GLOBAL                     0: tk
+                368     LOAD_ATTR                       20: Label
+                388     PUSH_NULL
+                390     LOAD_FAST                       0: cookie_window
+                392     LOAD_CONST                      11: 'Enter Cookie:'
+                394     LOAD_CONST                      9: '#1c1c1c'
+                396     LOAD_CONST                      12: 'white'
+                398     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                400     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                402     CALL_KW                         5
+                404     LOAD_ATTR                       23: pack
+                424     LOAD_CONST                      15: 10
+                426     LOAD_CONST                      16: ('pady',)
+                428     CALL_KW                         1
+                430     POP_TOP
+                432     LOAD_GLOBAL                     0: tk
+                442     LOAD_ATTR                       24: Entry
+                462     PUSH_NULL
+                464     LOAD_FAST                       0: cookie_window
+                466     LOAD_CONST                      17: 30
+                468     LOAD_CONST                      18: ('width',)
+                470     CALL_KW                         2
+                472     STORE_DEREF                     6: cookie_entry
+                474     LOAD_DEREF                      6: cookie_entry
+                476     LOAD_ATTR                       23: pack
+                496     LOAD_CONST                      19: 5
+                498     LOAD_CONST                      16: ('pady',)
+                500     CALL_KW                         1
+                502     POP_TOP
+                504     LOAD_GLOBAL                     0: tk
+                514     LOAD_ATTR                       20: Label
+                534     PUSH_NULL
+                536     LOAD_FAST                       0: cookie_window
+                538     LOAD_CONST                      20: ''
+                540     LOAD_CONST                      9: '#1c1c1c'
+                542     LOAD_CONST                      12: 'white'
+                544     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                546     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                548     CALL_KW                         5
+                550     STORE_DEREF                     7: cookie_status_label
+                552     LOAD_DEREF                      7: cookie_status_label
+                554     LOAD_ATTR                       23: pack
+                574     LOAD_CONST                      19: 5
+                576     LOAD_CONST                      16: ('pady',)
+                578     CALL_KW                         1
+                580     POP_TOP
+                582     LOAD_FAST                       6: cookie_entry
+                584     LOAD_FAST                       7: cookie_status_label
+                586     BUILD_TUPLE                     2
+                588     LOAD_CONST                      21: <CODE> check_cookie
+                590     MAKE_FUNCTION
+                592     SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                594     STORE_FAST                      5: check_cookie
+                596     RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: replace_cookie_action
+            Qualified Name: replace_cookie_action
+            Arg Count: 2
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'messagebox'
+                'showerror'
+                'replace_cookie'
+                'destroy'
+            [Locals+Names]
+                'cookie_window'
+                'cookie_value'
+            [Constants]
+                None
+                'Error'
+                'Please enter a valid cookie.'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_FAST                       1: cookie_value
+                4       TO_BOOL
+                12      POP_JUMP_IF_TRUE                24 (to 62)
+                16      LOAD_GLOBAL                     0: messagebox
+                26      LOAD_ATTR                       2: showerror
+                46      PUSH_NULL
+                48      LOAD_CONST                      1: 'Error'
+                50      LOAD_CONST                      2: 'Please enter a valid cookie.'
+                52      CALL                            2
+                60      POP_TOP
+                62      RETURN_CONST                    0: None
+                64      LOAD_GLOBAL                     5: NULL + replace_cookie
+                74      LOAD_FAST                       1: cookie_value
+                76      CALL                            1
+                84      POP_TOP
+                86      LOAD_FAST                       0: cookie_window
+                88      LOAD_ATTR                       7: destroy
+                108     CALL                            0
+                116     POP_TOP
+                118     RETURN_CONST                    0: None
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: prompt_for_cookie
+            Qualified Name: prompt_for_cookie
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 12
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'tk'
+                'Toplevel'
+                'root'
+                'title'
+                'resizable'
+                'wm_attributes'
+                'winfo_screenwidth'
+                'winfo_screenheight'
+                'geometry'
+                'configure'
+                'Label'
+                'pack'
+                'Entry'
+                'Button'
+                'update_idletasks'
+                'center_window'
+            [Locals+Names]
+                'width'
+                'height'
+                'x'
+                'y'
+                'check_cookie'
+                'on_replace_button_click'
+                'check_button'
+                'replace_button'
+                'cookie_entry'
+                'cookie_status_label'
+                'cookie_window'
+            [Constants]
+                None
+                'Enter Cookie'
+                False
+                '-alpha'
+                0.9
+                (
+                    300
+                    200
+                )
+                2
+                'x'
+                '+'
+                '#1c1c1c'
+                (
+                    'bg'
+                )
+                'Enter Cookie:'
+                'white'
+                (
+                    'Anonymous Pro'
+                    12
+                )
+                (
+                    'text'
+                    'bg'
+                    'fg'
+                    'font'
+                )
+                10
+                (
+                    'pady'
+                )
+                30
+                (
+                    'width'
+                )
+                5
+                ''
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: check_cookie
+                    Qualified Name: prompt_for_cookie.<locals>.check_cookie
+                    Arg Count: 0
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 7
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                        'get'
+                        'strip'
+                        'config'
+                        'os'
+                        'path'
+                        'join'
+                        'dirname'
+                        'abspath'
+                        '__file__'
+                        'subprocess'
+                        'Popen'
+                        'PIPE'
+                        'CREATE_NO_WINDOW'
+                        'communicate'
+                        'decode'
+                    [Locals+Names]
+                        'cookie_value'
+                        'script_path'
+                        'process'
+                        'stdout'
+                        'stderr'
+                        'cookie_entry'
+                        'cookie_status_label'
+                    [Constants]
+                        None
+                        'Please Enter A Cookie.'
+                        'yellow'
+                        (
+                            'text'
+                            'fg'
+                        )
+                        'Modules'
+                        'CookieCheck.js'
+                        'node'
+                        (
+                            'stdout'
+                            'stderr'
+                            'creationflags'
+                        )
+                        'Cookie Input Is Invalid.'
+                        'red'
+                        'valid'
+                        'Cookie Is Valid.'
+                        'green'
+                        'Cookie Is Invalid.'
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  2
+                        2       RESUME                          0
+                        4       LOAD_DEREF                      5: cookie_entry
+                        6       LOAD_ATTR                       1: get
+                        26      CALL                            0
+                        34      LOAD_ATTR                       3: strip
+                        54      CALL                            0
+                        62      STORE_FAST                      0: cookie_value
+                        64      LOAD_FAST                       0: cookie_value
+                        66      TO_BOOL
+                        74      POP_JUMP_IF_TRUE                17 (to 110)
+                        78      LOAD_DEREF                      6: cookie_status_label
+                        80      LOAD_ATTR                       5: config
+                        100     LOAD_CONST                      1: 'Please Enter A Cookie.'
+                        102     LOAD_CONST                      2: 'yellow'
+                        104     LOAD_CONST                      3: ('text', 'fg')
+                        106     CALL_KW                         2
+                        108     POP_TOP
+                        110     RETURN_CONST                    0: None
+                        112     LOAD_GLOBAL                     6: os
+                        122     LOAD_ATTR                       8: path
+                        142     LOAD_ATTR                       11: join
+                        162     LOAD_GLOBAL                     6: os
+                        172     LOAD_ATTR                       8: path
+                        192     LOAD_ATTR                       13: dirname
+                        212     LOAD_GLOBAL                     6: os
+                        222     LOAD_ATTR                       8: path
+                        242     LOAD_ATTR                       15: abspath
+                        262     LOAD_GLOBAL                     16: __file__
+                        272     CALL                            1
+                        280     CALL                            1
+                        288     LOAD_CONST                      4: 'Modules'
+                        290     LOAD_CONST                      5: 'CookieCheck.js'
+                        292     CALL                            3
+                        300     STORE_FAST                      1: script_path
+                        302     LOAD_GLOBAL                     18: subprocess
+                        312     LOAD_ATTR                       20: Popen
+                        332     PUSH_NULL
+                        334     LOAD_CONST                      6: 'node'
+                        336     LOAD_FAST_LOAD_FAST             16: script_path, cookie_value
+                        338     BUILD_LIST                      3
+                        340     LOAD_GLOBAL                     18: subprocess
+                        350     LOAD_ATTR                       22: PIPE
+                        370     LOAD_GLOBAL                     18: subprocess
+                        380     LOAD_ATTR                       22: PIPE
+                        400     LOAD_GLOBAL                     18: subprocess
+                        410     LOAD_ATTR                       24: CREATE_NO_WINDOW
+                        430     LOAD_CONST                      7: ('stdout', 'stderr', 'creationflags')
+                        432     CALL_KW                         4
+                        434     STORE_FAST                      2: process
+                        436     LOAD_FAST                       2: process
+                        438     LOAD_ATTR                       27: communicate
+                        458     CALL                            0
+                        466     UNPACK_SEQUENCE                 2
+                        470     STORE_FAST_STORE_FAST           52: stdout, stderr
+                        472     LOAD_FAST                       4: stderr
+                        474     TO_BOOL
+                        482     POP_JUMP_IF_FALSE               17 (to 518)
+                        486     LOAD_DEREF                      6: cookie_status_label
+                        488     LOAD_ATTR                       5: config
+                        508     LOAD_CONST                      8: 'Cookie Input Is Invalid.'
+                        510     LOAD_CONST                      9: 'red'
+                        512     LOAD_CONST                      3: ('text', 'fg')
+                        514     CALL_KW                         2
+                        516     POP_TOP
+                        518     RETURN_CONST                    0: None
+                        520     LOAD_CONST                      10: 'valid'
+                        522     LOAD_FAST                       3: stdout
+                        524     LOAD_ATTR                       29: decode
+                        544     CALL                            0
+                        552     CONTAINS_OP                     0 (in)
+                        556     POP_JUMP_IF_FALSE               17 (to 592)
+                        560     LOAD_DEREF                      6: cookie_status_label
+                        562     LOAD_ATTR                       5: config
+                        582     LOAD_CONST                      11: 'Cookie Is Valid.'
+                        584     LOAD_CONST                      12: 'green'
+                        586     LOAD_CONST                      3: ('text', 'fg')
+                        588     CALL_KW                         2
+                        590     POP_TOP
+                        592     RETURN_CONST                    0: None
+                        594     LOAD_DEREF                      6: cookie_status_label
+                        596     LOAD_ATTR                       5: config
+                        616     LOAD_CONST                      13: 'Cookie Is Invalid.'
+                        618     LOAD_CONST                      9: 'red'
+                        620     LOAD_CONST                      3: ('text', 'fg')
+                        622     CALL_KW                         2
+                        624     POP_TOP
+                        626     RETURN_CONST                    0: None
+                [Code]
+                    File Name: Lanos.pyw
+                    Object Name: on_replace_button_click
+                    Qualified Name: prompt_for_cookie.<locals>.on_replace_button_click
+                    Arg Count: 0
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Stack Size: 4
+                    Flags: 0x00000013 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NESTED)
+                    [Names]
+                        'get'
+                        'strip'
+                        'replace_cookie_action'
+                    [Locals+Names]
+                        'cookie_value'
+                        'cookie_entry'
+                        'cookie_window'
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       COPY_FREE_VARS                  2
+                        2       RESUME                          0
+                        4       LOAD_DEREF                      1: cookie_entry
+                        6       LOAD_ATTR                       1: get
+                        26      CALL                            0
+                        34      LOAD_ATTR                       3: strip
+                        54      CALL                            0
+                        62      STORE_FAST                      0: cookie_value
+                        64      LOAD_GLOBAL                     5: NULL + replace_cookie_action
+                        74      LOAD_DEREF                      2: cookie_window
+                        76      LOAD_FAST                       0: cookie_value
+                        78      CALL                            2
+                        86      POP_TOP
+                        88      RETURN_CONST                    0: None
+                'Check Cookie'
+                '#333333'
+                '#4d4d4d'
+                20
+                (
+                    'text'
+                    'command'
+                    'bg'
+                    'fg'
+                    'activebackground'
+                    'activeforeground'
+                    'font'
+                    'width'
+                )
+                'Replace Cookie'
+            [Disassembly]
+                0       MAKE_CELL                       8: cookie_entry
+                2       MAKE_CELL                       9: cookie_status_label
+                4       MAKE_CELL                       10: cookie_window
+                6       RESUME                          0
+                8       LOAD_GLOBAL                     0: tk
+                18      LOAD_ATTR                       2: Toplevel
+                38      PUSH_NULL
+                40      LOAD_GLOBAL                     4: root
+                50      CALL                            1
+                58      STORE_DEREF                     10: cookie_window
+                60      LOAD_DEREF                      10: cookie_window
+                62      LOAD_ATTR                       7: title
+                82      LOAD_CONST                      1: 'Enter Cookie'
+                84      CALL                            1
+                92      POP_TOP
+                94      LOAD_DEREF                      10: cookie_window
+                96      LOAD_ATTR                       9: resizable
+                116     LOAD_CONST                      2: False
+                118     LOAD_CONST                      2: False
+                120     CALL                            2
+                128     POP_TOP
+                130     LOAD_DEREF                      10: cookie_window
+                132     LOAD_ATTR                       11: wm_attributes
+                152     LOAD_CONST                      3: '-alpha'
+                154     LOAD_CONST                      4: 0.9
+                156     CALL                            2
+                164     POP_TOP
+                166     LOAD_CONST                      5: (300, 200)
+                168     UNPACK_SEQUENCE                 2
+                172     STORE_FAST_STORE_FAST           1: width, height
+                174     LOAD_DEREF                      10: cookie_window
+                176     LOAD_ATTR                       13: winfo_screenwidth
+                196     CALL                            0
+                204     LOAD_CONST                      6: 2
+                206     BINARY_OP                       2 (//)
+                210     LOAD_FAST                       0: width
+                212     LOAD_CONST                      6: 2
+                214     BINARY_OP                       2 (//)
+                218     BINARY_OP                       10 (-)
+                222     STORE_FAST                      2: x
+                224     LOAD_DEREF                      10: cookie_window
+                226     LOAD_ATTR                       15: winfo_screenheight
+                246     CALL                            0
+                254     LOAD_CONST                      6: 2
+                256     BINARY_OP                       2 (//)
+                260     LOAD_FAST                       1: height
+                262     LOAD_CONST                      6: 2
+                264     BINARY_OP                       2 (//)
+                268     BINARY_OP                       10 (-)
+                272     STORE_FAST                      3: y
+                274     LOAD_DEREF                      10: cookie_window
+                276     LOAD_ATTR                       17: geometry
+                296     LOAD_FAST                       0: width
+                298     FORMAT_SIMPLE
+                300     LOAD_CONST                      7: 'x'
+                302     LOAD_FAST                       1: height
+                304     FORMAT_SIMPLE
+                306     LOAD_CONST                      8: '+'
+                308     LOAD_FAST                       2: x
+                310     FORMAT_SIMPLE
+                312     LOAD_CONST                      8: '+'
+                314     LOAD_FAST                       3: y
+                316     FORMAT_SIMPLE
+                318     BUILD_STRING                    7
+                320     CALL                            1
+                328     POP_TOP
+                330     LOAD_DEREF                      10: cookie_window
+                332     LOAD_ATTR                       19: configure
+                352     LOAD_CONST                      9: '#1c1c1c'
+                354     LOAD_CONST                      10: ('bg',)
+                356     CALL_KW                         1
+                358     POP_TOP
+                360     LOAD_GLOBAL                     0: tk
+                370     LOAD_ATTR                       20: Label
+                390     PUSH_NULL
+                392     LOAD_DEREF                      10: cookie_window
+                394     LOAD_CONST                      11: 'Enter Cookie:'
+                396     LOAD_CONST                      9: '#1c1c1c'
+                398     LOAD_CONST                      12: 'white'
+                400     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                402     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                404     CALL_KW                         5
+                406     LOAD_ATTR                       23: pack
+                426     LOAD_CONST                      15: 10
+                428     LOAD_CONST                      16: ('pady',)
+                430     CALL_KW                         1
+                432     POP_TOP
+                434     LOAD_GLOBAL                     0: tk
+                444     LOAD_ATTR                       24: Entry
+                464     PUSH_NULL
+                466     LOAD_DEREF                      10: cookie_window
+                468     LOAD_CONST                      17: 30
+                470     LOAD_CONST                      18: ('width',)
+                472     CALL_KW                         2
+                474     STORE_DEREF                     8: cookie_entry
+                476     LOAD_DEREF                      8: cookie_entry
+                478     LOAD_ATTR                       23: pack
+                498     LOAD_CONST                      19: 5
+                500     LOAD_CONST                      16: ('pady',)
+                502     CALL_KW                         1
+                504     POP_TOP
+                506     LOAD_GLOBAL                     0: tk
+                516     LOAD_ATTR                       20: Label
+                536     PUSH_NULL
+                538     LOAD_DEREF                      10: cookie_window
+                540     LOAD_CONST                      20: ''
+                542     LOAD_CONST                      9: '#1c1c1c'
+                544     LOAD_CONST                      12: 'white'
+                546     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                548     LOAD_CONST                      14: ('text', 'bg', 'fg', 'font')
+                550     CALL_KW                         5
+                552     STORE_DEREF                     9: cookie_status_label
+                554     LOAD_DEREF                      9: cookie_status_label
+                556     LOAD_ATTR                       23: pack
+                576     LOAD_CONST                      19: 5
+                578     LOAD_CONST                      16: ('pady',)
+                580     CALL_KW                         1
+                582     POP_TOP
+                584     LOAD_FAST                       8: cookie_entry
+                586     LOAD_FAST                       9: cookie_status_label
+                588     BUILD_TUPLE                     2
+                590     LOAD_CONST                      21: <CODE> check_cookie
+                592     MAKE_FUNCTION
+                594     SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                596     STORE_FAST                      4: check_cookie
+                598     LOAD_FAST                       8: cookie_entry
+                600     LOAD_FAST                       10: cookie_window
+                602     BUILD_TUPLE                     2
+                604     LOAD_CONST                      22: <CODE> on_replace_button_click
+                606     MAKE_FUNCTION
+                608     SET_FUNCTION_ATTRIBUTE          8 (MAKE_FUNCTION_CLOSURE)
+                610     STORE_FAST                      5: on_replace_button_click
+                612     LOAD_GLOBAL                     0: tk
+                622     LOAD_ATTR                       26: Button
+                642     PUSH_NULL
+                644     LOAD_DEREF                      10: cookie_window
+                646     LOAD_CONST                      23: 'Check Cookie'
+                648     LOAD_FAST                       4: check_cookie
+                650     LOAD_CONST                      24: '#333333'
+                652     LOAD_CONST                      12: 'white'
+                654     LOAD_CONST                      25: '#4d4d4d'
+                656     LOAD_CONST                      12: 'white'
+                658     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                660     LOAD_CONST                      26: 20
+                662     LOAD_CONST                      27: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font', 'width')
+                664     CALL_KW                         9
+                666     STORE_FAST                      6: check_button
+                668     LOAD_FAST                       6: check_button
+                670     LOAD_ATTR                       23: pack
+                690     LOAD_CONST                      15: 10
+                692     LOAD_CONST                      16: ('pady',)
+                694     CALL_KW                         1
+                696     POP_TOP
+                698     LOAD_GLOBAL                     0: tk
+                708     LOAD_ATTR                       26: Button
+                728     PUSH_NULL
+                730     LOAD_DEREF                      10: cookie_window
+                732     LOAD_CONST                      28: 'Replace Cookie'
+                734     LOAD_FAST                       5: on_replace_button_click
+                736     LOAD_CONST                      24: '#333333'
+                738     LOAD_CONST                      12: 'white'
+                740     LOAD_CONST                      25: '#4d4d4d'
+                742     LOAD_CONST                      12: 'white'
+                744     LOAD_CONST                      13: ('Anonymous Pro', 12)
+                746     LOAD_CONST                      26: 20
+                748     LOAD_CONST                      27: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font', 'width')
+                750     CALL_KW                         9
+                752     STORE_FAST                      7: replace_button
+                754     LOAD_FAST                       7: replace_button
+                756     LOAD_ATTR                       23: pack
+                776     LOAD_CONST                      19: 5
+                778     LOAD_CONST                      16: ('pady',)
+                780     CALL_KW                         1
+                782     POP_TOP
+                784     LOAD_DEREF                      10: cookie_window
+                786     LOAD_ATTR                       29: update_idletasks
+                806     CALL                            0
+                814     POP_TOP
+                816     LOAD_GLOBAL                     31: NULL + center_window
+                826     LOAD_DEREF                      10: cookie_window
+                828     CALL                            1
+                836     POP_TOP
+                838     RETURN_CONST                    0: None
+        'Lanos V3 Pro'
+        '400x260'
+        '#1c1c1c'
+        (
+            'bg'
+        )
+        '-alpha'
+        0.9
+        False
+        'Animation ID Spoofing'
+        '#333333'
+        'white'
+        '#4d4d4d'
+        (
+            'Anonymous Pro'
+            12
+        )
+        (
+            'text'
+            'command'
+            'bg'
+            'fg'
+            'activebackground'
+            'activeforeground'
+            'font'
+        )
+        10
+        'x'
+        (
+            'pady'
+            'padx'
+            'fill'
+        )
+        'Script ID Spoofing'
+        'Set Cookie'
+        'Credits'
+        [Code]
+            File Name: Lanos.pyw
+            Object Name: <lambda>
+            Qualified Name: <lambda>
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Stack Size: 4
+            Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+            [Names]
+                'messagebox'
+                'showinfo'
+            [Locals+Names]
+            [Constants]
+                None
+                'Credits'
+                'Lanos V3 Pro - Lounoo Leaks\nDeveloped By Lounoo\nDiscord: @lounoo @<862704542344151100>'
+            [Disassembly]
+                0       RESUME                          0
+                2       LOAD_GLOBAL                     0: messagebox
+                12      LOAD_ATTR                       2: showinfo
+                32      PUSH_NULL
+                34      LOAD_CONST                      1: 'Credits'
+                36      LOAD_CONST                      2: 'Lanos V3 Pro - Lounoo Leaks\nDeveloped By Lounoo\nDiscord: @lounoo @<862704542344151100>'
+                38      CALL                            2
+                46      RETURN_VALUE
+        'Exit'
+    [Disassembly]
+        0       RESUME                          0
+        2       LOAD_CONST                      0: 0
+        4       LOAD_CONST                      1: None
+        6       IMPORT_NAME                     0: tkinter
+        8       STORE_NAME                      1: tk
+        10      LOAD_CONST                      0: 0
+        12      LOAD_CONST                      1: None
+        14      IMPORT_NAME                     2: subprocess
+        16      STORE_NAME                      2: subprocess
+        18      LOAD_CONST                      0: 0
+        20      LOAD_CONST                      1: None
+        22      IMPORT_NAME                     3: os
+        24      STORE_NAME                      3: os
+        26      LOAD_CONST                      0: 0
+        28      LOAD_CONST                      1: None
+        30      IMPORT_NAME                     4: time
+        32      STORE_NAME                      4: time
+        34      LOAD_CONST                      0: 0
+        36      LOAD_CONST                      1: None
+        38      IMPORT_NAME                     5: sys
+        40      STORE_NAME                      5: sys
+        42      LOAD_CONST                      0: 0
+        44      LOAD_CONST                      1: None
+        46      IMPORT_NAME                     6: atexit
+        48      STORE_NAME                      6: atexit
+        50      LOAD_CONST                      0: 0
+        52      LOAD_CONST                      2: ('messagebox', 'StringVar', 'ttk')
+        54      IMPORT_NAME                     0: tkinter
+        56      IMPORT_FROM                     7: messagebox
+        58      STORE_NAME                      7: messagebox
+        60      IMPORT_FROM                     8: StringVar
+        62      STORE_NAME                      8: StringVar
+        64      IMPORT_FROM                     9: ttk
+        66      STORE_NAME                      9: ttk
+        68      POP_TOP
+        70      LOAD_NAME                       3: os
+        72      LOAD_ATTR                       20: path
+        92      LOAD_ATTR                       23: join
+        112     LOAD_NAME                       3: os
+        114     LOAD_ATTR                       20: path
+        134     LOAD_ATTR                       25: dirname
+        154     LOAD_NAME                       3: os
+        156     LOAD_ATTR                       20: path
+        176     LOAD_ATTR                       27: abspath
+        196     LOAD_NAME                       14: __file__
+        198     CALL                            1
+        206     CALL                            1
+        214     LOAD_CONST                      3: 'lanos.lock'
+        216     CALL                            2
+        224     STORE_NAME                      15: lock_file
+        226     LOAD_CONST                      4: <CODE> show_error_message
+        228     MAKE_FUNCTION
+        230     STORE_NAME                      16: show_error_message
+        232     LOAD_NAME                       3: os
+        234     LOAD_ATTR                       20: path
+        254     LOAD_ATTR                       35: exists
+        274     LOAD_NAME                       15: lock_file
+        276     CALL                            1
+        284     TO_BOOL
+        292     POP_JUMP_IF_FALSE               25 (to 344)
+        296     LOAD_NAME                       16: show_error_message
+        298     PUSH_NULL
+        300     CALL                            0
+        308     POP_TOP
+        310     LOAD_NAME                       5: sys
+        312     LOAD_ATTR                       36: exit
+        332     PUSH_NULL
+        334     LOAD_CONST                      0: 0
+        336     CALL                            1
+        344     POP_TOP
+        346     LOAD_NAME                       19: open
+        348     PUSH_NULL
+        350     LOAD_NAME                       15: lock_file
+        352     LOAD_CONST                      5: 'w'
+        354     CALL                            2
+        362     BEFORE_WITH
+        364     STORE_NAME                      20: f
+        366     LOAD_NAME                       20: f
+        368     LOAD_ATTR                       43: write
+        388     LOAD_NAME                       22: str
+        390     PUSH_NULL
+        392     LOAD_NAME                       3: os
+        394     LOAD_ATTR                       46: getpid
+        414     PUSH_NULL
+        416     CALL                            0
+        424     CALL                            1
+        432     CALL                            1
+        440     POP_TOP
+        442     LOAD_CONST                      1: None
+        444     LOAD_CONST                      1: None
+        446     LOAD_CONST                      1: None
+        448     CALL                            2
+        456     POP_TOP
+        458     LOAD_CONST                      6: <CODE> remove_lock_file
+        460     MAKE_FUNCTION
+        462     STORE_NAME                      24: remove_lock_file
+        464     LOAD_NAME                       6: atexit
+        466     LOAD_ATTR                       50: register
+        486     PUSH_NULL
+        488     LOAD_NAME                       24: remove_lock_file
+        490     CALL                            1
+        498     POP_TOP
+        500     LOAD_CONST                      7: <CODE> get_script_path
+        502     MAKE_FUNCTION
+        504     STORE_NAME                      26: get_script_path
+        506     BUILD_LIST                      0
+        508     STORE_NAME                      27: processes
+        510     LOAD_CONST                      8: <CODE> execute_and_reopen
+        512     MAKE_FUNCTION
+        514     STORE_NAME                      28: execute_and_reopen
+        516     LOAD_CONST                      9: <CODE> reopen_menu
+        518     MAKE_FUNCTION
+        520     STORE_NAME                      29: reopen_menu
+        522     LOAD_CONST                      10: <CODE> handle_selection
+        524     MAKE_FUNCTION
+        526     STORE_NAME                      30: handle_selection
+        528     LOAD_CONST                      11: <CODE> create_lua_script
+        530     MAKE_FUNCTION
+        532     STORE_NAME                      31: create_lua_script
+        534     LOAD_CONST                      12: <CODE> reset_lua_scripts
+        536     MAKE_FUNCTION
+        538     STORE_NAME                      32: reset_lua_scripts
+        540     LOAD_CONST                      13: <CODE> open_animation_spoofing
+        542     MAKE_FUNCTION
+        544     STORE_NAME                      33: open_animation_spoofing
+        546     LOAD_CONST                      14: <CODE> open_script_spoofing
+        548     MAKE_FUNCTION
+        550     STORE_NAME                      34: open_script_spoofing
+        552     LOAD_CONST                      15: <CODE> exit_application
+        554     MAKE_FUNCTION
+        556     STORE_NAME                      35: exit_application
+        558     LOAD_CONST                      16: <CODE> center_window
+        560     MAKE_FUNCTION
+        562     STORE_NAME                      36: center_window
+        564     LOAD_CONST                      17: <CODE> replace_cookie
+        566     MAKE_FUNCTION
+        568     STORE_NAME                      37: replace_cookie
+        570     LOAD_CONST                      18: <CODE> prompt_for_cookie
+        572     MAKE_FUNCTION
+        574     STORE_NAME                      38: prompt_for_cookie
+        576     LOAD_CONST                      19: <CODE> replace_cookie_action
+        578     MAKE_FUNCTION
+        580     STORE_NAME                      39: replace_cookie_action
+        582     LOAD_CONST                      20: <CODE> prompt_for_cookie
+        584     MAKE_FUNCTION
+        586     STORE_NAME                      38: prompt_for_cookie
+        588     LOAD_NAME                       1: tk
+        590     LOAD_ATTR                       80: Tk
+        610     PUSH_NULL
+        612     CALL                            0
+        620     STORE_NAME                      41: root
+        622     LOAD_NAME                       41: root
+        624     LOAD_ATTR                       85: title
+        644     LOAD_CONST                      21: 'Lanos V3 Pro'
+        646     CALL                            1
+        654     POP_TOP
+        656     LOAD_NAME                       41: root
+        658     LOAD_ATTR                       87: geometry
+        678     LOAD_CONST                      22: '400x260'
+        680     CALL                            1
+        688     POP_TOP
+        690     LOAD_NAME                       41: root
+        692     LOAD_ATTR                       89: configure
+        712     LOAD_CONST                      23: '#1c1c1c'
+        714     LOAD_CONST                      24: ('bg',)
+        716     CALL_KW                         1
+        718     POP_TOP
+        720     LOAD_NAME                       41: root
+        722     LOAD_ATTR                       91: wm_attributes
+        742     LOAD_CONST                      25: '-alpha'
+        744     LOAD_CONST                      26: 0.9
+        746     CALL                            2
+        754     POP_TOP
+        756     LOAD_NAME                       41: root
+        758     LOAD_ATTR                       93: resizable
+        778     LOAD_CONST                      27: False
+        780     LOAD_CONST                      27: False
+        782     CALL                            2
+        790     POP_TOP
+        792     LOAD_NAME                       36: center_window
+        794     PUSH_NULL
+        796     LOAD_NAME                       41: root
+        798     CALL                            1
+        806     POP_TOP
+        808     LOAD_NAME                       1: tk
+        810     LOAD_ATTR                       94: Button
+        830     PUSH_NULL
+        832     LOAD_NAME                       41: root
+        834     LOAD_CONST                      28: 'Animation ID Spoofing'
+        836     LOAD_NAME                       33: open_animation_spoofing
+        838     LOAD_CONST                      29: '#333333'
+        840     LOAD_CONST                      30: 'white'
+        842     LOAD_CONST                      31: '#4d4d4d'
+        844     LOAD_CONST                      30: 'white'
+        846     LOAD_CONST                      32: ('Anonymous Pro', 12)
+        848     LOAD_CONST                      33: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font')
+        850     CALL_KW                         8
+        852     LOAD_ATTR                       97: pack
+        872     LOAD_CONST                      34: 10
+        874     LOAD_CONST                      34: 10
+        876     LOAD_CONST                      35: 'x'
+        878     LOAD_CONST                      36: ('pady', 'padx', 'fill')
+        880     CALL_KW                         3
+        882     POP_TOP
+        884     LOAD_NAME                       1: tk
+        886     LOAD_ATTR                       94: Button
+        906     PUSH_NULL
+        908     LOAD_NAME                       41: root
+        910     LOAD_CONST                      37: 'Script ID Spoofing'
+        912     LOAD_NAME                       34: open_script_spoofing
+        914     LOAD_CONST                      29: '#333333'
+        916     LOAD_CONST                      30: 'white'
+        918     LOAD_CONST                      31: '#4d4d4d'
+        920     LOAD_CONST                      30: 'white'
+        922     LOAD_CONST                      32: ('Anonymous Pro', 12)
+        924     LOAD_CONST                      33: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font')
+        926     CALL_KW                         8
+        928     LOAD_ATTR                       97: pack
+        948     LOAD_CONST                      34: 10
+        950     LOAD_CONST                      34: 10
+        952     LOAD_CONST                      35: 'x'
+        954     LOAD_CONST                      36: ('pady', 'padx', 'fill')
+        956     CALL_KW                         3
+        958     POP_TOP
+        960     LOAD_NAME                       1: tk
+        962     LOAD_ATTR                       94: Button
+        982     PUSH_NULL
+        984     LOAD_NAME                       41: root
+        986     LOAD_CONST                      38: 'Set Cookie'
+        988     LOAD_NAME                       38: prompt_for_cookie
+        990     LOAD_CONST                      29: '#333333'
+        992     LOAD_CONST                      30: 'white'
+        994     LOAD_CONST                      31: '#4d4d4d'
+        996     LOAD_CONST                      30: 'white'
+        998     LOAD_CONST                      32: ('Anonymous Pro', 12)
+        1000    LOAD_CONST                      33: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font')
+        1002    CALL_KW                         8
+        1004    LOAD_ATTR                       97: pack
+        1024    LOAD_CONST                      34: 10
+        1026    LOAD_CONST                      34: 10
+        1028    LOAD_CONST                      35: 'x'
+        1030    LOAD_CONST                      36: ('pady', 'padx', 'fill')
+        1032    CALL_KW                         3
+        1034    POP_TOP
+        1036    LOAD_NAME                       1: tk
+        1038    LOAD_ATTR                       94: Button
+        1058    PUSH_NULL
+        1060    LOAD_NAME                       41: root
+        1062    LOAD_CONST                      39: 'Credits'
+        1064    LOAD_CONST                      40: <CODE> <lambda>
+        1066    MAKE_FUNCTION
+        1068    LOAD_CONST                      29: '#333333'
+        1070    LOAD_CONST                      30: 'white'
+        1072    LOAD_CONST                      31: '#4d4d4d'
+        1074    LOAD_CONST                      30: 'white'
+        1076    LOAD_CONST                      32: ('Anonymous Pro', 12)
+        1078    LOAD_CONST                      33: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font')
+        1080    CALL_KW                         8
+        1082    LOAD_ATTR                       97: pack
+        1102    LOAD_CONST                      34: 10
+        1104    LOAD_CONST                      34: 10
+        1106    LOAD_CONST                      35: 'x'
+        1108    LOAD_CONST                      36: ('pady', 'padx', 'fill')
+        1110    CALL_KW                         3
+        1112    POP_TOP
+        1114    LOAD_NAME                       1: tk
+        1116    LOAD_ATTR                       94: Button
+        1136    PUSH_NULL
+        1138    LOAD_NAME                       41: root
+        1140    LOAD_CONST                      41: 'Exit'
+        1142    LOAD_NAME                       35: exit_application
+        1144    LOAD_CONST                      29: '#333333'
+        1146    LOAD_CONST                      30: 'white'
+        1148    LOAD_CONST                      31: '#4d4d4d'
+        1150    LOAD_CONST                      30: 'white'
+        1152    LOAD_CONST                      32: ('Anonymous Pro', 12)
+        1154    LOAD_CONST                      33: ('text', 'command', 'bg', 'fg', 'activebackground', 'activeforeground', 'font')
+        1156    CALL_KW                         8
+        1158    LOAD_ATTR                       97: pack
+        1178    LOAD_CONST                      34: 10
+        1180    LOAD_CONST                      34: 10
+        1182    LOAD_CONST                      35: 'x'
+        1184    LOAD_CONST                      36: ('pady', 'padx', 'fill')
+        1186    CALL_KW                         3
+        1188    POP_TOP
+        1190    LOAD_NAME                       41: root
+        1192    LOAD_ATTR                       99: mainloop
+        1212    CALL                            0
+        1220    POP_TOP
+        1222    RETURN_CONST                    1: None
+        1224    PUSH_EXC_INFO
+        1226    WITH_EXCEPT_START
+        1228    TO_BOOL
+        1236    POP_JUMP_IF_TRUE                1 (to 1240)
+        1240    RERAISE                         2
+        1242    POP_TOP
+        1244    POP_EXCEPT
+        1246    POP_TOP
+        1248    POP_TOP
+        1250    JUMP_BACKWARD_NO_INTERRUPT      398 (to 458)
+        1254    COPY                            3
+        1256    POP_EXCEPT
+        1258    RERAISE                         1
